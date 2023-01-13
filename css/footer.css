@@ -1,0 +1,52 @@
+/* ###############################################
+*                   PIE DE PÁGINA
+* ############################################### */
+footer {
+    background-color: #171614;
+    height: 16rem;
+}
+#footer-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+}
+#footer-container > div {
+    color: white;
+}
+#f-item-1 table {
+    float: right;
+    margin: 3em;
+}
+#f-item-2 table {
+    margin: 3em;
+    margin-left: 0;
+}
+#f-item-1 table td, #f-item-1 table th,
+#f-item-2 table td, #f-item-2 table th {
+    padding: 0.7em;
+}
+.f-submenu td {
+    cursor: pointer;
+}
+.f-submenu td:hover {
+    color: #dddddd;
+    border-bottom: 2px solid #a6c93d;
+}
+.f-head {
+    font-size: large;
+}
+.f-submenu {
+    color: #B6B6B6;
+}
+#f-item-3 > div {
+    float: left;
+    cursor: pointer;
+}
+.twitter {
+    margin: 3em 0 0 3em;
+}
+.instagram, .linkedin {
+    margin: 3em 0 0 1em;
+}
+.twitter:hover, .instagram:hover, .linkedin:hover {
+    border-bottom: 3px solid #587792;
+}

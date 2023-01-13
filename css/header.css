@@ -1,0 +1,80 @@
+/* ###############################################
+*                   CABECERA
+* ############################################### */
+header {
+    background-color: white;
+    /* border: 1px solid black; */
+    position: relative;
+    display: flex;
+}
+div {
+    /* border: 1px solid red; */
+}
+#header-container {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    align-items: center;
+}
+.logo, .page-name,
+.register, .login {
+    float: left;
+}
+.logo {
+    margin: 1em;
+    margin-left: 25%;
+}
+.register {
+    color: white;
+    background-color: #87A330;
+    margin: 1.5em 0.6em 1.5em 1.5em;
+}
+.register:hover { background-color: #a6c93d; }
+.login:hover { 
+    background-color: #cfcfcf;
+    color: rgb(68, 68, 68);
+}
+.login {
+    background-color: #B6B6B6;
+    font-weight: 600;
+    margin: 1.5em 1.5em 1.5em 0.6em;
+}
+.login, .register {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: small;
+    width: 8.5em;
+    height: 2.7em;
+    min-width: 6em;
+    border-radius: 10px;
+}
+#wrapper {
+    min-height: calc(100% - 4rem);
+    background-image: url('../imgs/senderismo.jpg');
+    background-repeat: no-repeat;
+    background-position: 50%;
+}
+
+/* ###############################################
+*                   RESPONSIVE
+* ############################################### */
+@media (max-width: 600px) {
+    .logo {
+        margin: 0.4em;
+        margin-left: 10%;
+    }
+    .page-name {
+        font-size: smaller;
+    }
+    .register, .login {
+        float: none;
+        margin: 0.3em 0 0.3em 4em;
+        font-size: 0.7em;
+    }
+    #b-cabecera {
+        display: flex;
+        flex-direction: column;
+    }
+  }
+  
