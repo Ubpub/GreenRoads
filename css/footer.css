@@ -50,3 +50,13 @@ footer {
 .twitter:hover, .instagram:hover, .linkedin:hover {
     border-bottom: 3px solid #587792;
 }
+
+/* ###############################################
+*                   RESPONSIVE
+* ############################################### */
+@media (max-width: 800px) {
+    #f-item-1 table {
+        float: left;
+        margin: 3em;
+    }
+}
