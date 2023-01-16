@@ -1,3 +1,6 @@
+div {
+    /* border: 1px solid red; */
+}
 /* ###############################################
 *                   PIE DE PÁGINA
 * ############################################### */
@@ -23,6 +26,7 @@ footer {
 #f-item-1 table td, #f-item-1 table th,
 #f-item-2 table td, #f-item-2 table th {
     padding: 0.7em;
+    font-size: calc(0.3em + 1vw)
 }
 .f-submenu td {
     cursor: pointer;
@@ -37,6 +41,9 @@ footer {
 .f-submenu {
     color: #B6B6B6;
 }
+#f-item-3 {
+    display: block;
+}
 #f-item-3 > div {
     float: left;
     cursor: pointer;
@@ -47,7 +54,7 @@ footer {
 .instagram, .linkedin {
     margin: 3em 0 0 1em;
 }
-.twitter:hover, .instagram:hover, .linkedin:hover {
+.twitter > img:hover, .instagram > img:hover, .linkedin > img:hover {
     border-bottom: 3px solid #587792;
 }
 
@@ -55,8 +62,29 @@ footer {
 *                   RESPONSIVE
 * ############################################### */
 @media (max-width: 800px) {
+    #footer-container {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
     #f-item-1 table {
         float: left;
-        margin: 3em;
+        margin: 3em 0 3em 3em;
+    }
+    #f-item-3 {
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+    #f-item-3 > div {
+        margin: 0;
+        display: inline-block;
+        cursor:auto;
+    }
+    #f-item-3 > div > img {
+        cursor: pointer;
+    }
+    .twitter {
+        padding-top: 2em;
+    }
+    .instagram {
+        padding-top: 1em;
     }
 }

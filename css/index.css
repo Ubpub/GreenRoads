@@ -17,11 +17,43 @@ div {
     min-height: calc(100% - 4rem);
     /* border: 4px solid green; */
 }
-#wrapper #w-imagen {
+#w-imagen {
+    position: relative;
     height: 100vh;
     background-image: url('../imgs/senderismo.jpg');
     background-repeat: no-repeat;
-    background-position: 50%;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #1E1E1E;
+    /* background-position: 50%; */
+}
+#w-imagen-texto {
+    /* border: 2px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: white;
+    padding: 7em;
+}
+#w-imagen-texto h2 {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; 
+    font-size: calc(4em + 1vw);
+    padding: 0.2em;
+    border-radius: 0.4em;
+    cursor: pointer;
+}
+#w-imagen-texto h2:hover {
+    background-color: rgba(255, 255, 255, 0.699);
+    color: #1E1E1E;
 }
 
 /* ###############################################
