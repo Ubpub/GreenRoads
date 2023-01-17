@@ -1,11 +1,3 @@
-body {
-    font-family: 'Arimo', sans-serif;
-    margin: 0;
-    color: #1E1E1E;
-}
-html, body {
-    height: 100vh;
-}
 div {
     /* border: 2px solid red; */
 }
@@ -13,10 +5,6 @@ div {
 /* ###############################################
 *                   IMAGEN
 * ############################################### */
-#wrapper {
-    min-height: calc(100% - 4rem);
-    /* border: 4px solid green; */
-}
 #w-imagen {
     position: relative;
     height: 100vh;
@@ -26,7 +14,6 @@ div {
     background-attachment: fixed;
     background-size: cover;
     background-color: #1E1E1E;
-    /* background-position: 50%; */
 }
 #w-imagen-texto {
     /* border: 2px solid black; */
@@ -63,16 +50,6 @@ div {
     padding: 5% 15% 5% 15%;
     /* border: 4px solid blue; */
 }
-/* #w-rutas-destacadas {
-    display: flex;
-    height: 15em;
-}
-#w-rutas-destacadas > div {
-    border: 1px solid blue;
-    height: 100%;
-    float: left;
-    width: 15em;
-} */
 
 /* ###############################################
 *                   SLOGAN

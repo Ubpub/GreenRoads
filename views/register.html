@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrarse</title>
+
+    <!-- Tipo de fuente -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/register.css">
+    <link rel="icon" href="/imgs/icono-senderista.png">
+</head>
+<body>
+    <!-- HEADER -->
+    <div id="index-header"></div>
+
+    <!-- NAVIGATION BAR -->
+    <!-- <div id="nav-bar"></div> -->
+
+    <!-- CONTENIDO -->
+    <div id="wrapper">
+        <div id="registro">
+            <h2>Crear cuenta</h2>
+            <div>¿Ya tienes una cuenta?&nbsp;&nbsp;&nbsp;&nbsp;<a id="link-login" href="/views/login.html">Iniciar sesión</a></div>
+            <div id="register-form">
+                <form action="">
+                    <div><input type="text" name="nombreApell" id="nombreApell" placeholder="Nombre y apellidos"></div>
+                    <div><input type="text" name="usuario" id="usuario" placeholder="Nombre de usuario"></div>
+                    <div><input type="text" name="correo" id="correo" placeholder="Correo electrónico"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div id="index-footer"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <script src="/js/header_footer.js"></script>
+</body>
+</html>

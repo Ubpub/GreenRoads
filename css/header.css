@@ -10,6 +10,12 @@ header {
 div {
     /* border: 1px solid red; */
 }
+a {
+    text-decoration: none;
+}
+#link-inicio {
+    color: #1E1E1E;
+}
 #header-container {
     display: grid;
     grid-template-columns: 1.5fr 1fr;

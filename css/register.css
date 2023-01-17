@@ -1,0 +1,35 @@
+#wrapper {
+    padding: 1em;
+    padding-left: 15%;
+    height: 100vh;
+}
+#register {
+    border: 1px solid black;
+}
+#link-login {
+    text-decoration: underline;
+    color: #87A330;
+}
+
+/* ###############################################
+*                   FORMULARIO
+* ############################################### */
+#register-form {
+    margin-top: 1em;
+    /* border: 1px solid #87A330; */
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+input {
+    border: 1px solid #B9B9B9;
+    border-radius: 0.5em;
+    width: 25em;
+    height: 2.5em;
+}
+input::placeholder {
+    color: #8E8E8E;
+    padding-left: 1em;
+}
+#register-form  div {
+    padding-top: 1em;
+}
