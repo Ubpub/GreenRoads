@@ -5,6 +5,11 @@ div {
 /* ###############################################
 *                   IMAGEN
 * ############################################### */
+#w-container {
+    /* border: 8px solid black; */
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
 #w-imagen {
     position: relative;
     height: 100vh;
@@ -14,10 +19,18 @@ div {
     background-attachment: fixed;
     background-size: cover;
     background-color: #1E1E1E;
+    border-radius: 45% 0 0 45%;
+    /* border: 8px solid pink; */
+}
+#w-texto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3em;
 }
 #w-imagen-texto {
     /* border: 2px solid black; */
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     position: absolute;
@@ -28,7 +41,8 @@ div {
     color: white;
     padding: 7em;
 }
-#w-imagen-texto h2 {
+#w-imagen-texto h2, #w-texto h2 {
+    /* border: 8px solid #86a330a8; */
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -41,6 +55,9 @@ div {
 #w-imagen-texto h2:hover {
     background-color: rgba(255, 255, 255, 0.699);
     color: #1E1E1E;
+}
+#w-texto h2:hover {
+    background-color: #86a3308c;
 }
 
 /* ###############################################
@@ -55,6 +72,7 @@ div {
 *                   SLOGAN
 * ############################################### */
 #l-title {
+    /* border: 8px solid black; */
     /* color: #87A330; */
     font-size: xx-large;
     /* -webkit-text-stroke: 1px #667c22; */
@@ -62,13 +80,27 @@ div {
 #l-text {
     font-weight: 400;
     font-size: larger;
+    /* border: 8px solid black; */
 }
 
 /* ###############################################
 *                   RESPONSIVE
 * ############################################### */
 @media (max-width: 600px) {
-    /* #w-rutas-destacadas {
-        
-    } */
+    
+}
+@media (max-width: 800px) {
+    #w-imagen-texto {
+        display: flex;
+    }
+    #w-container {
+        display: block;
+    }
+    #w-imagen {
+        border-radius: 0;
+        /* border: 8px solid pink; */
+    }
+    #w-texto {
+        display: none;
+    }
 }

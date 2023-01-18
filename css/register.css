@@ -1,7 +1,8 @@
 #wrapper {
     padding: 1em;
     padding-left: 15%;
-    height: 100vh;
+    margin-bottom: 6em;
+    /* height: 100vh; */
 }
 #register {
     border: 1px solid black;
@@ -9,6 +10,9 @@
 #link-login {
     text-decoration: underline;
     color: #87A330;
+}
+div {
+    /* border: 1px solid black; */
 }
 
 /* ###############################################
@@ -18,7 +22,7 @@
     margin-top: 1em;
     /* border: 1px solid #87A330; */
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
 }
 input {
     border: 1px solid #B9B9B9;
@@ -30,6 +34,90 @@ input::placeholder {
     color: #8E8E8E;
     padding-left: 1em;
 }
-#register-form  div {
+#register-form  div:not(#btn-registro) {
     padding-top: 1em;
+}
+#fisico div {
+    float: left;
+    padding: 0;
+}
+#fisico div input {
+    width: 11em;
+}
+#estatura {
+    margin-right: 1.3em;
+}
+#peso {
+    margin-left: 1.3em;
+}
+.aux {
+    clear: both;
+}
+#actividades {
+    font-size: 0.8em;
+    /* border: 8px solid pink; */
+    width: 25em;
+}
+#btn-registro {
+    background-color: #87A330;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 21em;
+    border-radius: 0.5em;
+    margin-top: 1em;
+    padding: 0.6em 0 0.6em 0;
+    cursor: pointer;
+}
+#btn-registro:hover {
+    background-color: #a6c93d;
+}
+#politica {
+    /* border: 1px solid black; */
+    text-align: center;
+    font-size: 0.8em;
+    width: 26em;
+}
+#politica a {
+    text-decoration: underline;
+    font-weight: bold;
+    color: #1E1E1E;
+}
+
+/* ###############################################
+*                   FORMULARIO
+* ############################################### */
+#selector-actividades {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+#selector-actividaes div {
+    /* border: 4px solid blue; */
+    display: flex;
+    align-items: center;
+}
+#selector-actividades input {
+    border: 1px solid #B9B9B9;
+    border-radius: 0.5em;
+    width: auto;
+    height: auto;
+}
+#selector-actividades div label {
+    color: #5e5e5e;
+}
+
+/* ###############################################
+*                   RESPONSIVE
+* ############################################### */
+@media (max-width: 600px) {
+    input { width: 20em; }
+    #fisico div input { width: 8em; }
+    #estatura { margin-right: 1.8em; }
+    #peso { margin-left: 1.8em; }
+    #actividades { width: 20em; }
+    #btn-registro { width: 17em; }
+    #politica { width: 21em; }
+    label { font-size: 0.8em; }
 }

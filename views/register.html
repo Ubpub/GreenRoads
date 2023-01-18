@@ -29,9 +29,47 @@
             <div>¿Ya tienes una cuenta?&nbsp;&nbsp;&nbsp;&nbsp;<a id="link-login" href="/views/login.html">Iniciar sesión</a></div>
             <div id="register-form">
                 <form action="">
-                    <div><input type="text" name="nombreApell" id="nombreApell" placeholder="Nombre y apellidos"></div>
-                    <div><input type="text" name="usuario" id="usuario" placeholder="Nombre de usuario"></div>
-                    <div><input type="text" name="correo" id="correo" placeholder="Correo electrónico"></div>
+                    <div><input type="text" name="nombreApell" id="nombreApell" placeholder="Nombre y apellidos" maxlength="70"></div>
+                    <div><input type="text" name="usuario" id="usuario" placeholder="Nombre de usuario" maxlength="25"></div>
+                    <div><input type="text" name="correo" id="correo" placeholder="Correo electrónico" maxlength="60"></div>
+                    <div><input type="text" name="contrasena" id="contrasena" placeholder="Contraseña" maxlength="20"></div>
+                    <div><input type="text" name="fechanac" id="fechanac" placeholder="Fecha de nacimiento"></div>
+                    <div id="fisico">
+                        <div><input type="number" name="estatura" id="estatura" placeholder="Estatura (cm)" min="0" max="300"></div>
+                        <div><input type="number" name="peso" id="peso" placeholder="Peso (kg)" min="0" max="600"></div>
+                    </div>
+                    <div class="aux"></div>
+                    <div id="actividades">
+                        Actividades favoritas
+                        <div id="selector-actividades">
+                            <div>
+                                <label for="jogging">Correr:</label>
+                                <input type="checkbox" name="jogging" value="jogging" id="jogging">
+                            </div>
+                            <div>
+                                <label for="trekking">Senderismo:</label>
+                                <input type="checkbox" name="trekking" value="trekking" id="trekking">
+                            </div>
+                            <div>
+                                <label for="cycling">Ciclismo:</label>
+                                <input type="checkbox" name="cycling" value="cycling" id="cycling">
+                            </div>
+                            <div>
+                                <label for="mountaineering">Alpinismo:</label>
+                                <input type="checkbox" name="mountaineering" value="mountaineering" id="mountaineering">
+                            </div>
+                            <div>
+                                <label for="walk">Paseo:</label>
+                                <input type="checkbox" name="walk" value="walk" id="walk">
+                            </div>
+                            <div>
+                                <label for="kayak">Kayak:</label>
+                                <input type="checkbox" name="kayak" value="kayak" id="kayak">
+                            </div>
+                        </div>
+                    </div>
+                    <div id="btn-registro">Registrarme</div>
+                    <div id="politica">Al seguir utilizando GreenRoads, acpetas nuestras <a href="">Condiciones de Uso</a> y <a href="">Política de Privacidad</a>.</div>
                 </form>
             </div>
         </div>
@@ -41,6 +79,7 @@
     <div id="index-footer"></div>
 
     <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <script src="/js/register.js"></script>
     <script src="/js/header_footer.js"></script>
 </body>
 </html>
