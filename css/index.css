@@ -19,7 +19,7 @@ div {
     background-attachment: fixed;
     background-size: cover;
     background-color: #1E1E1E;
-    border-radius: 45% 0 0 45%;
+    border-radius: 30% 0 0 30%;
     /* border: 8px solid pink; */
 }
 #w-texto {
@@ -57,7 +57,10 @@ div {
     color: #1E1E1E;
 }
 #w-texto h2:hover {
-    background-color: #86a3308c;
+    /* background-color: #86a3308c; */
+    font-size: calc(4.5em + 1vw);
+    color: #1e1e1eb2;
+    padding: 0;
 }
 
 /* ###############################################
@@ -67,6 +70,20 @@ div {
     padding: 5% 15% 5% 15%;
     /* border: 4px solid blue; */
 }
+hr {
+    border-color: #1E1E1E
+}
+#w-rutas-destacadas {
+    border: 2px solid black;
+    height: 17.5em;
+}
+#w-rutas-destacadas div {
+    margin: 0.5em;
+    width: 14em;
+    height: 15em;
+    float: left;
+    border: 2px solid yellow;
+}
 
 /* ###############################################
 *                   SLOGAN
@@ -75,19 +92,33 @@ div {
     /* border: 8px solid black; */
     /* color: #87A330; */
     font-size: xx-large;
+    /* text-align: end; */
     /* -webkit-text-stroke: 1px #667c22; */
 }
 #l-text {
     font-weight: 400;
     font-size: larger;
+    /* text-align: end; */
     /* border: 8px solid black; */
 }
 
 /* ###############################################
 *                   RESPONSIVE
 * ############################################### */
-@media (max-width: 600px) {
-    
+@media (max-width: 1510px) {
+    #w-rutas-destacadas {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        height: auto;
+    }
+    #w-rutas-destacadas div {
+        margin: 0.5em;
+        width: 11em;
+        height: 13em;
+        float: left;
+        border: 2px solid yellow;
+    }
 }
 @media (max-width: 800px) {
     #w-imagen-texto {

@@ -1,3 +1,4 @@
+const hola = '';
 
 renderPage();
 
@@ -13,4 +14,8 @@ function getNameSurname(texto) {
     // Sugerir nombre de usuario en un futuro
     /* [nombre, ...apellidos] = texto.split(' ');
     apellidos = apellidos.join(' '); */
+}
+
+function chekcUsername() {
+
 }
