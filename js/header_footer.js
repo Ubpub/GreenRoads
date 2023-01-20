@@ -1,4 +1,4 @@
-const header_view = "./views/included-views/header.html";
+const header_view = "/views/included-views/header.html";
 let header_id = '#index-header';
 const nav_bar = "/views/included-views/nav-bar.html";
 let nav_bar_id = '#nav-bar';

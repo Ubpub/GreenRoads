@@ -23,6 +23,7 @@ div {
     /* border: 1px solid #87A330; */
     display: grid;
     grid-template-rows: 1fr;
+    width: fit-content;
 }
 input {
     border: 1px solid #B9B9B9;
@@ -106,6 +107,17 @@ input::placeholder {
 }
 #selector-actividades div label {
     color: #5e5e5e;
+}
+
+/* ###############################################
+*                   ALERTA
+* ############################################### */
+#alerta {
+    display: none;
+    text-align: center;
+    font-weight: bold;
+    color: red;
+    font-size: 0.9em;
 }
 
 /* ###############################################
