@@ -3,7 +3,6 @@
 * ############################################### */
 header {
     background-color: white;
-    /* border: 1px solid black; */
     position: relative;
     display: flex;
 }
@@ -12,6 +11,7 @@ div {
 }
 a {
     text-decoration: none;
+    color: #1E1E1E;
 }
 #link-inicio {
     color: #1E1E1E;
@@ -51,10 +51,21 @@ a {
     align-items: center;
     justify-content: center;
     font-size: small;
-    width: 8.5em;
+    width: 10em;
     height: 2.7em;
     min-width: 6em;
-    border-radius: 10px;
+    border-radius: 0.5em;
+}
+.bi {
+    font-size: 1.4em;
+}
+#b-cabecera {
+    display: flex;
+    justify-content: end;
+    padding-right: 4em;
+}
+#b-cabecera div {
+    margin: 1em;
 }
 
 /* ###############################################
@@ -72,9 +83,14 @@ a {
         float: none;
         margin: 0.3em 0 0.3em 4em;
         font-size: 0.7em;
+        width: 9em;
     }
     #b-cabecera {
         display: flex;
         flex-direction: column;
+        padding: 0;
+    }
+    #b-cabecera div {
+        margin: 0;
     }
 }

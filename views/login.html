@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+
+    <!-- Tipo de fuente -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/login-register.css">
+    <link rel="icon" href="/imgs/icono-senderista.png">
+</head>
+<body>
+    <!-- HEADER -->
+    <div id="index-header"></div>
+
+    <!-- CONTENIDO -->
+    <div id="wrapper">
+        <div id="registro">
+            <h2>Iniciar sesión</h2>
+            <div>¿Todavía no tienes una cuenta?&nbsp;&nbsp;&nbsp;&nbsp;<a id="link-login" href="/views/register.html">Regístrate</a></div>
+            <div id="login-form">
+                <form action="">
+                    <div><input type="text" name="usuario-correo" id="usuario-correo" placeholder="Usuario o correo" maxlength="60" required></div>
+                    <div><input type="password" name="contrasena" id="contrasena" placeholder="Contraseña" maxlength="20" required></div>
+                    <div>
+                        <label for="remember-me">
+                            <input type="checkbox" name="remember-me" id="remember-me">
+                            <i></i>
+                            Recordarme
+                        </label>
+                        
+                        
+                    </div>
+                    <div id="btn-inicio">Iniciar sesión</div>
+                    <div id="alerta">Campo <span id="nombre-campo"></span> vacío</div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div id="index-footer"></div>
+
+    <script src="/js/header_footer.js"></script>
+    <script src="/js/slogan.js"></script>
+</body>
+</html>

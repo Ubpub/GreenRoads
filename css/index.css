@@ -7,8 +7,8 @@ div {
 * ############################################### */
 #w-container {
     /* border: 8px solid black; */
-    /* display: grid;
-    grid-template-columns: 1fr 2fr; */
+    display: grid;
+    grid-template-columns: 1fr 2fr;
 }
 #w-imagen {
     position: relative;
@@ -19,18 +19,21 @@ div {
     /* background-attachment: fixed; */
     background-size: cover;
     background-color: #1E1E1E;
-    /* border-radius: 30% 10% 30% 10%; */
+    border-radius: 40% 0 0 40%;
     /* border: 8px solid pink; */
 }
 #w-texto {
+    grid-column: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 3em;
+    min-width: auto;
+    padding: 2.5em;
 }
 #w-imagen-texto {
     /* border: 2px solid black; */
-    display: flex;
+    /* display: flex; */
+    display: none;
     justify-content: center;
     align-items: center;
     position: absolute;
@@ -38,15 +41,18 @@ div {
     bottom: 0;
     left: 0;
     right: 0;
-    color: #1E1E1E;
+    /* color: #1E1E1E; */
+    color: white;
     padding: 7em;
 }
 #w-imagen-texto h2 {
-    background-color: rgba(255, 255, 255, 0.699);
-    box-shadow: 2px 5px 10px #1E1E1E;
+    /* background-color: rgba(255, 255, 255, 0.699); */
+    /* box-shadow: 2px 5px 10px #1E1E1E; */
+}
+#w-imagen-texto a {
+    color: white;
 }
 #w-imagen-texto h2, #w-texto h2 {
-    /* border: 8px solid #86a330a8; */
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -58,7 +64,8 @@ div {
 }
 #w-imagen-texto h2:hover {
     background-color: rgba(255, 255, 255, 0.849);
-    font-size: calc(4.5em + 1vw);
+    color: #1E1E1E;
+    /* font-size: calc(4.5em + 1vw); */
 }
 #w-texto h2:hover {
     font-size: calc(4.5em + 1vw);
@@ -106,7 +113,7 @@ hr {
     /* border: 1px solid black; */
     border-radius: 1em;
     height: 60%;
-    background-image: url('../imgs/monte-leon.webp');
+    background-image: url('../imgs/NoImageFound.png');
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -147,6 +154,12 @@ hr {
         height: 13em;
         float: left;
     }
+    #w-texto h2 {
+        font-size: calc(3.5em + 1vw);
+    }
+    #w-texto h2:hover {
+        font-size: calc(4em + 1vw);
+    }
 }
 @media (max-width: 1230px) {
     #w-rutas-destacadas {
@@ -157,6 +170,12 @@ hr {
         width: 10em;
         height: 12em;
         float: left;
+    }
+    #w-texto h2 {
+        font-size: calc(3em + 1vw);
+    }
+    #w-texto h2:hover {
+        font-size: calc(3.5em + 1vw);
     }
 }
 @media (max-width: 1040px) {
@@ -169,11 +188,17 @@ hr {
         height: 15em;
         float: left;
     }
+    #w-texto h2 {
+        font-size: calc(2.5em + 1vw);
+    }
+    #w-texto h2:hover {
+        font-size: calc(3em + 1vw);
+    }
 }
 @media (max-width: 800px) {
-    /* #w-imagen-texto {
+    #w-imagen-texto {
         display: flex;
-    } */
+    }
     #w-container {
         display: block;
     }
