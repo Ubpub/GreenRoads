@@ -78,8 +78,252 @@
 }
 
 /* ###############################################
+*           MEJORES RUTAS Y CERCA DE TI
+* ############################################### */
+#mejores-rutas, #cerca-de-ti {
+    margin-top: 2em;
+    /* border: 2px solid black; */
+}
+#mr-titulo, #cr-titulo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+#mr-titulo img {
+    transform: scaleX(-1);
+    width: 1.5em;
+    height: 2.3em;
+}
+#mr-titulo h2, #cr-titulo h2 {
+    font-size: calc(1em + 1vw);
+    margin-left: 0.5em;
+}
+#mr-titulo-1, #cr-titulo-1 {
+    grid-column: 1;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+#mr-titulo-2, #cr-titulo-2 {
+    display: flex;
+    align-items: center;
+    grid-column: 2;
+    padding-left: 2em;
+}
+#mr-titulo-2 h4, #cr-titulo h4 {
+    color: #8E8E8E;
+}
+
+/* ###############################################
+*                    CERCA DE TI
+* ############################################### */
+#cr-titulo img {
+    width: 2em;
+    height: 2em;
+}
+
+/* ###############################################
+*       MEJORES RUTAS Y CERCA DE TI IMÁGENES
+* ############################################### */
+#mr-img, #cr-img {
+    /* border: 2px solid black; */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 13em;
+}
+#mr-img div, #cr-img div {
+    /* border: 3px solid purple; */
+    border-radius: 0.5em;
+    background-image: url('../imgs/NoImageFound.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    margin: 0.4em;
+}
+#mr-ver-mas, #cr-ver-mas {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding: 0.5em;
+}
+#mr-btn-ver-mas, #cr-btn-ver-mas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #87A330;
+    border-radius: 0.3em;
+    font-weight: 500;
+    color: white;
+    width: 8em;
+    height: 2em;
+    cursor: pointer;
+}
+#mr-btn-ver-mas:hover, #cr-btn-ver-mas:hover {
+    background-color: #a6c93d;
+}
+
+/* ###############################################
+*                LISTA DE RUTAS
+* ############################################### */
+.item-ruta {
+    border: 1px solid #B6B6B6;
+    border-radius: 0.3em;
+    height: 22em;
+    padding: 1em;
+}
+.rt-titulo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* border: 1px solid black; */
+}
+#lugar-ruta {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+#lugar-ruta h4 {
+    color: #8E8E8E;
+    font-weight: 500;
+}
+.rt-contenido {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* border: 1px solid black; */
+    height: 80%;
+}
+#rt-ct-img {
+    /* border: 1px solid green; */
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+.rt-info {
+    /* border: 1px solid purple; */
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1.3fr 1.7fr 1fr;
+}
+.img-principal {
+    grid-column: 1;
+    grid-row: span 3;
+    background-image: url('../imgs/NoImageFound.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    margin: 0.4em;
+}
+.img-mini, .more-img {
+    grid-column: span 1;
+    grid-row: span 1;
+    background-image: url('../imgs/NoImageFound.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    margin: 0.4em;
+}
+.more-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    filter: blur(2px);
+}
+
+/* ###############################################
+*                TABLA INFORMATIVA
+* ############################################### */
+.rt-table {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.rt-descripcion {
+    padding-top: 3%;
+    padding-bottom: 3%;
+    padding-left: 8%;
+    padding-right: 8%;
+}
+.ver-ruta {
+    display: flex;
+    justify-content: end;
+    align-items: flex-end;
+}
+.ver-ruta a {
+    color: #87A330;
+    text-decoration: underline;
+}
+.ver-ruta a:hover {
+    font-weight: 600;
+}
+.div-info, .div-puntuacion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.div-info th { color: #A1C349; }
+.div-info td, .div-puntuacion { font-weight: 600; }
+.div-puntuacion i { font-size: 1em; }
+.bi-star-fill { color: orange; }
+
+/* ###############################################
 *                  RESPONSIVE
 * ############################################### */
+@media (max-width: 950px) {
+    #mr-img, #cr-img {
+        height: 11em;
+    }
+    #mr-titulo h2, #cr-titulo h2 {
+        font-size: calc(0.6em + 1vw);
+        margin-left: 0.5em;
+    }
+    #cr-titulo img {
+        width: 1em;
+        height: 1em;
+    }
+    #mr-titulo img {
+        width: 1.2em;
+        height: 1.6em;
+    }
+    #mr-titulo-2 h4, #cr-titulo h4 {
+        font-size: 0.7em;
+    }
+    #mr-btn-ver-mas, #cr-btn-ver-mas {
+        font-size: 0.8em;
+        width: 6em;
+        height: 2em;
+    }
+
+    .item-ruta {
+        height: 30em;
+    }
+    .rt-contenido {
+        /* border: 1px solid black; */
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 2fr;
+        height: 88%;
+    }
+    #rt-ct-img {
+        /* border: 1px solid #87A330; */
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+    .rt-info {
+        grid-row: 2;
+        height: 60%;
+    }
+    .img-principal {
+        grid-column: 1;
+        grid-row: 1;
+    }
+    .img-mini, .more-img {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+    .more-img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        filter: blur(2px);
+    }
+}
 @media (max-width: 700px) {
     #busqueda {
         display: block;
@@ -96,5 +340,43 @@
     }
     #subir-ruta {
         width: 7em;
+    }
+    #mr-img, #cr-img {
+        height: 7em;
+    }
+    .rt-titulo {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+    #lugar-ruta {
+        font-size: 1em;
+        display: block;
+    }
+    #lugar-ruta h4 {
+        display: block;
+        font-size: 0.7em;
+    }
+}
+@media (max-width: 420px) {
+    #mr-btn-ver-mas, #cr-btn-ver-mas {
+        font-size: 0.5em;
+        width: 4em;
+        height: 2em;
+    }
+}
+@media (min-width: 1260px) {
+    #mr-titulo h2, #cr-titulo h2 {
+        font-size: calc(0.4em + 1vw);
+    }
+    #wrapper {
+        padding-left: 20%;
+        padding-right: 20%;
+    }
+}
+@media (min-width: 1620px) {
+    #wrapper {
+        padding-left: 25%;
+        padding-right: 25%;
     }
 }

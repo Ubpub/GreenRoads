@@ -17,7 +17,19 @@ function renderPage() {
             let nacimiento = document.querySelector('#fechanac').value;
             let estatura = document.querySelector('#estatura').value;
             let peso = document.querySelector('#peso').value;
-            generateJSON(nombre, usuario, correo, contrasena, nacimiento, estatura, peso);
+            let user = generateJSON(nombre, usuario, correo, contrasena, nacimiento, estatura, peso);
+
+            fetch('localhost/api/register.php', {
+                method: 'POST',
+                headers: {
+                    'Content-type': 'application/json,charset-utf-8'
+                },
+                body: user,
+            }).then(response => response.text())
+            .then(data => {
+                console.log(data);
+            })
+
         } else {
             document.querySelector('#nombre-campo').textContent = vacio;
             alerta.style.display = 'block';
@@ -67,7 +79,7 @@ function chekcUsername() {
 }
 
 function generateJSON(nombre, usuario, correo, contrasena, nacimiento, estatura, peso) {
-    let user = {
+    return user = {
         'nombre': nombre,
         'usuario': usuario,
         'correo': correo,
@@ -76,5 +88,4 @@ function generateJSON(nombre, usuario, correo, contrasena, nacimiento, estatura,
         'estatura': estatura,
         'peso': peso,
     };
-    console.log(user);
 }

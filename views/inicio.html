@@ -24,23 +24,105 @@
 
     <!-- CONTENIDO -->
     <div id="wrapper">
+
+        <!-- Menú de búsqueda -->
         <div id="busqueda">
             <div id="menu">
                 <a href="#" id="link-rutas">Rutas</a>
                 &#124;
-                <a href="#" id="link-mapa">Mapa</a>
+                <a href="/views/mapa.html" id="link-mapa">Mapa</a>
             </div>
             <div id="barra">
                 <div class="barra-item"><input type="text" name="buscar-ruta" id="buscar-ruta" placeholder="Buscar rutas..."></div>
                 <div class="barra-item"><div id="subir-ruta"><i class="bi bi-cloud-arrow-up"></i>&nbsp;&nbsp;Subir ruta</div></div>
             </div>
         </div>
+
+        <!-- Mejores rutas -->
+        <div id="mejores-rutas">
+            <div id="mr-titulo">
+                <div id="mr-titulo-1">
+                    <img src="/imgs/senderismo-icono.webp" alt="Senderista">
+                    <h2>Mejores rutas de senderismo</h2>
+                </div>
+                <div id="mr-titulo-2">
+                    <h4><span>10.000.000</span> rutas</h4>
+                </div>
+            </div>
+
+            <div id="mr-img">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div id="mr-ver-mas">
+                <div id="mr-btn-ver-mas"></div>
+            </div>
+        </div>
+
+        <!-- Cerca de ti -->
+        <div id="cerca-de-ti">
+            <div id="cr-titulo">
+                <div id="cr-titulo-1">
+                    <img src="/imgs/ubicacion.png" alt="Ubicación">
+                    <h2>Cerca de ti</h2>
+                </div>
+                <div id="cr-titulo-2">
+                    <h4><span>6</span> rutas</h4>
+                </div>
+            </div>
+
+            <div id="cr-img">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div id="cr-ver-mas">
+                <div id="cr-btn-ver-mas"></div>
+            </div>
+        </div>
+
+        <!-- Lista de rutas -->
+        <div class="item-ruta">
+            <div class="rt-titulo">
+                <div id="nombre-ruta"><h2>Nombre de la ruta</h2></div>
+                <div id="lugar-ruta"><h4>País - Comunidad - Ciudad</h4></div>
+            </div>
+            <div class="rt-contenido">
+                <div id="rt-ct-img">
+                    <div class="img-principal"></div>
+                    <div class="img-mini"></div>
+                    <div class="img-mini"></div>
+                    <div class="more-img"></div>
+                </div>
+                <div class="rt-info">
+                    <div class="rt-table">
+                        <div class="div-info">
+                            <table>
+                                <tr><th>Distancia</th></tr>
+                                <tr><td class="distancia">-- km</td></tr>
+                            </table>
+                        </div>
+                        <div class="div-info">
+                            <table>
+                                <tr><th>Dificultad</th></tr>
+                                <tr><td class="dificultad">--</td></tr>
+                            </table>
+                        </div>
+                        <div class="div-puntuacion"><span class="cantidad">0</span>&nbsp;|&nbsp;<i class="bi bi-star-fill"></i>&nbsp;<span class="puntuacion">5</span></div>
+                    </div>
+                    <div class="rt-descripcion">Aquí va toda la descripción de la ruta. La puedo hacer muy larga si me apetece...</div>
+                    <div class="ver-ruta"><a href="">Ver ruta</a></div>
+                </div>
+            </div>
+        </div>
+
     </div>
 
     <!-- FOOTER -->
     <div id="index-footer"></div>
 
+    <script src="/js/responsive-principal.js"></script>
     <script src="/js/header_footer.js"></script>
-    <script src="/js/slogan.js"></script>
 </body>
 </html>
