@@ -1,8 +1,8 @@
-const header_view = "/views/included-views/header.html";
+const header_view = "../views/included-views/header.html";
 let header_id = '#index-header';
-const nav_bar = "/views/included-views/nav-bar.html";
+const nav_bar = "../views/included-views/nav-bar.html";
 let nav_bar_id = '#nav-bar';
-const footer_view = "/views/included-views/footer.html";
+const footer_view = "../views/included-views/footer.html";
 let footer_id = '#index-footer';
 
 obtenerHeaderFooter(header_view, header_id);
