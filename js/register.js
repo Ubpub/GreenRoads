@@ -19,16 +19,17 @@ function renderPage() {
             let peso = document.querySelector('#peso').value;
             let user = generateJSON(nombre, usuario, correo, contrasena, nacimiento, estatura, peso);
 
-            fetch('localhost/api/register.php', {
+            fetch(' http://localhost/GreenRoads/api/register.php', {
                 method: 'POST',
                 headers: {
                     'Content-type': 'application/json,charset-utf-8'
                 },
-                body: user,
+                body: JSON.stringify(user),
             }).then(response => response.text())
             .then(data => {
                 console.log(data);
             })
+            // console.log(JSON.stringify(user));
 
         } else {
             document.querySelector('#nombre-campo').textContent = vacio;

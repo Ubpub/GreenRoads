@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,10 +15,20 @@
     <!-- Iconos de Bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 
+    <!-- Mapa leaflet -->
+    <script src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />
+
+    <!-- Estilos Leafley Awesome Markers -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css">
+
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/principal.css">
+    <link rel="stylesheet" href="../css/mapa.css">
     <link rel="icon" href="../imgs/icono-senderista.png">
 </head>
+
 <body>
     <!-- HEADER -->
     <div id="index-header"></div>
@@ -33,14 +44,17 @@
                 <a href="#" id="link-mapa">Mapa</a>
             </div>
             <div id="barra">
-                <div class="barra-item"><input type="text" name="buscar-ruta" id="buscar-ruta" placeholder="Buscar rutas..."></div>
-                <div class="barra-item"><div id="subir-ruta"><i class="bi bi-cloud-arrow-up"></i>&nbsp;&nbsp;Subir ruta</div></div>
+                <div class="barra-item"><input type="text" name="buscar-ruta" id="buscar-ruta"
+                        placeholder="Buscar rutas..."></div>
+                <div class="barra-item">
+                    <div id="subir-ruta"><i class="bi bi-cloud-arrow-up"></i>&nbsp;&nbsp;Subir ruta</div>
+                </div>
             </div>
         </div>
 
         <!-- Mapa -->
-        <div id="mapa">
-            
+        <div id="map">
+
         </div>
 
     </div>
@@ -48,7 +62,9 @@
     <!-- FOOTER -->
     <div id="index-footer"></div>
 
-    <script src="../js/responsive-principal.js"></script>
+    <script src="../js/mapa.js"></script>
+    
     <script src="../js/header_footer.js"></script>
 </body>
+
 </html>

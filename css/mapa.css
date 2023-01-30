@@ -1,0 +1,123 @@
+#wrapper {
+    padding: 1em;
+    padding-left: 15%;
+    padding-right: 15%;
+    margin-bottom: 6em;
+    border-top: 1px solid #8E8E8E
+}
+
+/* ###############################################
+*                  MENU SUPERIOR
+* ############################################### */
+#busqueda {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+#menu {
+    grid-column: 1;
+    color: #8E8E8E;
+    font-size: large;
+    margin-top: 2%;
+}
+#menu a {
+    margin: 0 3% 0 3%;
+}
+#menu a:hover {
+    color: #87A330;
+    text-decoration: underline;
+}
+#link-rutas {
+    color: #8E8E8E;
+}
+#link-mapa {
+    color: #87A330;
+    text-decoration: underline;
+}
+
+
+#barra {
+    grid-column: 2;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+#barra .barra-item {
+    display: flex;
+    justify-content: end;
+}
+#barra .barra-item input {
+    grid-column: 1;
+    border: 1px solid #B9B9B9;
+    border-radius: 0.5em;
+    width: 15em;
+    height: 2em;
+}
+#barra .barra-item input::placeholder {
+    color: #8E8E8E;
+    padding-left: 1em;
+}
+#subir-ruta {
+    grid-column: 2;
+    background-color: #B6B6B6;
+    border-radius: 0.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: small;
+    width: 9em;
+    height: 100%;
+    cursor: pointer;
+}
+#subir-ruta:hover { 
+    background-color: #cfcfcf;
+    color: rgb(68, 68, 68);
+}
+.bi {
+    font-size: 1.4em;
+}
+
+/* ###############################################
+*                     MAPA
+* ############################################### */
+#map {
+    margin-top: 3em;
+    /* border: 2px solid green; */
+    height: 45em;
+    width: 100%;
+    /* box-shadow: 5px 5px 5px #888; */
+}
+
+/* ###############################################
+*                  RESPONSIVE
+* ############################################### */
+@media (max-width: 700px) {
+    #busqueda {
+        display: block;
+    }
+    #barra {
+        margin-top: 1em;
+        grid-template-columns: 1fr 1fr;
+    }
+    #barra .barra-item {
+        justify-content: start;
+    }
+    #barra .barra-item input {
+        width: 10em;
+    }
+    #subir-ruta {
+        width: 7em;
+    }
+}
+@media (min-width: 1260px) {
+    #wrapper {
+        padding-left: 20%;
+        padding-right: 20%;
+    }
+}
+@media (min-width: 1620px) {
+    #wrapper {
+        padding-left: 25%;
+        padding-right: 25%;
+    }
+}
+
