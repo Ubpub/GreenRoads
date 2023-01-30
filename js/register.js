@@ -17,9 +17,10 @@ function renderPage() {
             let nacimiento = document.querySelector('#fechanac').value;
             let estatura = document.querySelector('#estatura').value;
             let peso = document.querySelector('#peso').value;
-            let user = generateJSON(nombre, usuario, correo, contrasena, nacimiento, estatura, peso);
+            let actividades = obtenerActividades();
+            let user = generateJSON(nombre, usuario, correo, contrasena, nacimiento, estatura, peso, actividades);
 
-            fetch(' http://localhost/GreenRoads/api/register.php', {
+            fetch('http://localhost/GreenRoads/api/register.php', {
                 method: 'POST',
                 headers: {
                     'Content-type': 'application/json,charset-utf-8'
@@ -29,7 +30,6 @@ function renderPage() {
             .then(data => {
                 console.log(data);
             })
-            // console.log(JSON.stringify(user));
 
         } else {
             document.querySelector('#nombre-campo').textContent = vacio;
@@ -79,7 +79,30 @@ function chekcUsername() {
 
 }
 
-function generateJSON(nombre, usuario, correo, contrasena, nacimiento, estatura, peso) {
+function obtenerActividades() {
+    let actividades = [];
+    if (document.querySelector('#jogging').checked) {
+        actividades.push('jogging');
+    }
+    if (document.querySelector('#trekking').checked) {
+        actividades.push('trekking');
+    }
+    if (document.querySelector('#cycling').checked) {
+        actividades.push('cycling');
+    }
+    if (document.querySelector('#mountaineering').checked) {
+        actividades.push('mountaineering');
+    }
+    if (document.querySelector('#walk').checked) {
+        actividades.push('walk');
+    }
+    if (document.querySelector('#kayak').checked) {
+        actividades.push('kayak');
+    }
+    return (actividades.join(' '));
+}
+
+function generateJSON(nombre, usuario, correo, contrasena, nacimiento, estatura, peso, actividades) {
     return user = {
         'nombre': nombre,
         'usuario': usuario,
@@ -88,5 +111,6 @@ function generateJSON(nombre, usuario, correo, contrasena, nacimiento, estatura,
         'nacimiento': nacimiento,
         'estatura': estatura,
         'peso': peso,
+        'actividades': actividades,
     };
 }
