@@ -7,6 +7,7 @@ div {
 footer {
     background-color: #171614;
     height: 16em;
+    clear: both;
 }
 #f-item-1, #f-item-2, #f-item-3 {
     /* border: 8px solid black; */

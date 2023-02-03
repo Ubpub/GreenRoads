@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Roads - Editar perfil</title>
+
+    <!-- Tipo de fuente -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/login-register.css">
+    <link rel="stylesheet" href="../css/editar_prefil.css">
+    <link rel="icon" href="../imgs/icons/icono-senderista.png">
+</head>
+<body>
+    <!-- HEADER -->
+    <div id="index-header"></div>
+
+    <!-- NAVIGATION BAR -->
+    <!-- <div id="nav-bar"></div> -->
+
+    <!-- CONTENIDO -->
+    <div id="wrapper">
+        <h2>Información del perfil</h2>
+
+        <!-- Foto izquierda -->
+        <div id="izquierda">
+            <div><div id="image-user"></div></div>
+            <div><div id="change-photo">Cambiar foto</div></div>
+        </div>
+        <!-- Fin foto izquierda -->
+
+        <!-- Foto derecha -->
+        <div id="derecha">
+            <form action="#">
+                <div><label for="nombreApell">Nombre completo:</label></div>
+                <div><input type="text" name="nombreApell" id="nombreApell" placeholder="Nombre y apellidos" maxlength="70" required></div>
+                <div><label for="usuario">Nombre de usuario:</label></div>
+                <div><input type="text" name="usuario" id="usuario" placeholder="Nombre de usuario" maxlength="25" required></div>
+                <div><label for="correo">Correo electrónico:</label></div>
+                <div><input type="text" name="correo" id="correo" placeholder="Correo electrónico" maxlength="60" required></div>
+                <div id="fisico">
+                    <div>
+                        <label for="estatura">Estatura (cm):</label><br/>
+                        <input type="number" name="estatura" id="estatura" placeholder="Estatura (cm)" min="0" max="300">
+                    </div>
+                    <div>
+                        <label for="peso" class="end">Peso (kg):</label><br/>
+                        <input type="number" name="peso" id="peso" placeholder="Peso (kg)" min="0" max="600">
+                    </div>
+                </div>
+                <div class="aux"></div>
+                <div class="top"><label for="fechanac">Fecha de nacimiento:</label></div>
+                <div><input type="text" name="fechanac" id="fechanac" placeholder="Fecha de nacimiento"></div>
+                <div class="aux"></div>
+
+                <!-- Actividades -->
+                <div id="actividades">
+                    <label for="actividades">Actividades favoritas:</label>
+                    <div id="selector-actividades">
+                        <div>
+                            <label for="jogging">Correr:</label>
+                            <input type="checkbox" name="jogging" value="jogging" id="jogging">
+                        </div>
+                        <div>
+                            <label for="trekking">Senderismo:</label>
+                            <input type="checkbox" name="trekking" value="trekking" id="trekking">
+                        </div>
+                        <div>
+                            <label for="cycling">Ciclismo:</label>
+                            <input type="checkbox" name="cycling" value="cycling" id="cycling">
+                        </div>
+                        <div>
+                            <label for="mountaineering">Alpinismo:</label>
+                            <input type="checkbox" name="mountaineering" value="mountaineering" id="mountaineering">
+                        </div>
+                        <div>
+                            <label for="walk">Paseo:</label>
+                            <input type="checkbox" name="walk" value="walk" id="walk">
+                        </div>
+                        <div>
+                            <label for="kayak">Kayak:</label>
+                            <input type="checkbox" name="kayak" value="kayak" id="kayak">
+                        </div>
+                    </div>
+                </div>
+                <!-- Fin actividades -->
+
+                <div id="btn-editar">Guardar cambios</div>
+                <div id="alerta">Campo <span id="nombre-campo"></span> vacío</div>
+                <div id="alerta2"></div>
+            </form>
+        </div>
+        <!-- Fin foto derecha -->
+
+    </div>
+    <!-- FIN CONTENIDO -->
+
+    <!-- FOOTER -->
+    <div id="index-footer"></div>
+
+    <script src="../js/register.js"></script>
+    <script src="../js/header_footer.js"></script>
+</body>
+</html>

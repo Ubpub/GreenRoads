@@ -71,7 +71,7 @@ input::placeholder {
     /* border: 8px solid pink; */
     width: 25em;
 }
-#btn-inicio, #btn-registro {
+#btn-inicio, #btn-registro, #btn-editar {
     background-color: #87A330;
     color: white;
     display: flex;
@@ -86,7 +86,7 @@ input::placeholder {
 #login {
     margin-bottom: 7.9em;
 }
-#btn-inicio:hover, #btn-registro:hover {
+#btn-inicio:hover, #btn-registro:hover, #btn-editar:hover {
     background-color: #a6c93d;
 }
 #politica {
