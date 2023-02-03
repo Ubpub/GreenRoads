@@ -1,0 +1,17 @@
+.subir a {
+    color: #87A330;
+    font-size: 2em;
+}
+.subir {
+    position: sticky;
+    bottom: 0;
+}
+a {
+    display: inline-block;
+}
+a h2 {
+    color: #87A330;
+}
+a:hover {
+    text-decoration: underline;
+}

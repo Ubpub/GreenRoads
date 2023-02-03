@@ -1,11 +1,23 @@
 #wrapper {
     padding: 1em;
     padding-left: 15%;
+    padding-right: 15%;
     margin-bottom: 6em;
     border-top: 1px solid #8E8E8E
 }
-#register {
-    border: 1px solid black;
+#registro {
+    /* border: 1px solid black; */
+    display: inline-block;
+    /* display: none; */
+}
+#registrado {
+    /* border: 7px solid black; */
+    display: none;
+    text-align: center;
+}
+#registrado a {
+    color: #87A330;
+    font-weight: bold;
 }
 #link-login {
     text-decoration: underline;
@@ -74,7 +86,7 @@ input::placeholder {
 #login {
     margin-bottom: 7.9em;
 }
-#btn-registro:hover {
+#btn-inicio:hover, #btn-registro:hover {
     background-color: #a6c93d;
 }
 #politica {
@@ -119,7 +131,7 @@ input::placeholder {
 /* ###############################################
 *                   ALERTA
 * ############################################### */
-#alerta {
+#alerta, #alerta2 {
     display: none;
     text-align: center;
     font-weight: bold;
