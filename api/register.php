@@ -1,8 +1,14 @@
 <?php
+    use Firebase\JWT\JWT;
+    use Firebase\JWT\Key;
+
+    require_once('../vendor/autoload.php');
+
     // CONTRASEÑA ADMIN -> admin123
     require_once('conexion.php');
     $con = new Conexion();
-
+    $key = 'example_key';
+    
     // Insertar un usuario
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
         $json = file_get_contents('php://input');
@@ -26,6 +32,7 @@
         }
         exit;
     }
+    
 
     // Obtener los usuarios
     if ($_SERVER['REQUEST_METHOD'] == 'GET') {
@@ -37,8 +44,27 @@
                 $id = $_GET['id'];
                 $sql .= " AND id = '$id'";
             }
+            if (isset($_GET['usuario']) && isset($_GET['contrasena'])) {
+                
+                $contrasena = $_GET['contrasena'];
+                $hashPass = hash("sha512", $contrasena);
+                $sql .= " AND usuario = '$usuario' AND pass = '$hashPass'";
+            }
+            $usuario = $_GET['usuario'];
+
+            
+
             $result = $con->query($sql);
             $usuarios = $result->fetch_all(MYSQLI_ASSOC); // Obtiene lo usuarios
+
+            $payload = [
+                'iss' => $usuarios[0]['usuario'],
+            ];
+
+            $jwt = JWT::encode($payload, $key, 'HS256');
+
+            $usuario[0]['webToken'] = $jwt;
+
             HEADER("HTTP/1.1 200 OK");
             echo json_encode($usuarios);
         } catch(mysqli_sql_exception $e) {

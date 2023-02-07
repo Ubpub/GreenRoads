@@ -150,6 +150,7 @@ input::placeholder {
     #actividades { width: 20em; }
     #btn-registro { width: 17em; }
     #btn-inicio { width: 17em; }
+    #btn-editar { width: 17em; }
     #politica { width: 21em; }
     label { font-size: 0.8em; }
 }
