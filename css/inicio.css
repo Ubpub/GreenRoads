@@ -201,12 +201,12 @@
     grid-template-columns: 1fr 1fr;
     /* border: 1px solid black; */
 }
-#lugar-ruta {
+.lugar-ruta {
     display: flex;
     justify-content: end;
     align-items: center;
 }
-#lugar-ruta h4 {
+.lugar-ruta h4 {
     color: #8E8E8E;
     font-weight: 500;
 }
@@ -216,7 +216,7 @@
     /* border: 1px solid black; */
     height: 80%;
 }
-#rt-ct-img {
+.rt-ct-img {
     /* border: 1px solid green; */
     display: grid;
     grid-template-columns: 3fr 1fr;
@@ -326,7 +326,7 @@
         grid-template-rows: 1fr 2fr;
         height: 88%;
     }
-    #rt-ct-img {
+    .rt-ct-img {
         /* border: 1px solid #87A330; */
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr;
@@ -375,11 +375,11 @@
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr;
     }
-    #lugar-ruta {
+    .lugar-ruta {
         font-size: 1em;
         display: block;
     }
-    #lugar-ruta h4 {
+    .lugar-ruta h4 {
         display: block;
         font-size: 0.7em;
     }
