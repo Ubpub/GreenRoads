@@ -6,8 +6,8 @@
     border-top: 1px solid #8E8E8E
 }
 #registro {
-    /* border: 1px solid black; */
-    display: inline-block;
+    border: 1px solid black;
+    width: 40%;
     /* display: none; */
 }
 #registrado, #logueado {

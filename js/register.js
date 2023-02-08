@@ -1,5 +1,7 @@
 const patrones = {
     'email': /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/,
+    'fecha': /^([1-2][0-9]{3})\-(0[1-9]|1[0-2])\-(0[1-9]|1\d|2\d|3[0-1])$/,
+    'contrasena': /^(?=.*)(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/,
 };
 
 if (localStorage.getItem('webToken') == null) renderPage();
@@ -24,10 +26,19 @@ function renderPage() {
             let estatura = document.querySelector('#estatura').value;
             let peso = document.querySelector('#peso').value;
             let actividades = obtenerActividades();
-            if (!(validateEmail(correo))) {
+
+            // Comprobar campos
+            // MATH: math1234MATH
+            if (!(comprobarCampos(correo, 'email'))) {
                 writeAlert('Correo no válido');
                 changeInputStyle('#correo', 'red');
-            } else {
+            } else if(!(comprobarCampos(contrasena, 'contrasena'))) {
+                writeAlert('La contraseña debe contener al menos 8 caracteres, mayúsculas, minísculas y números');
+                changeInputStyle('#fechanac', 'red');
+            }else if(!(comprobarCampos(nacimiento, 'fecha'))) {
+                writeAlert('Fecha no válida');
+                changeInputStyle('#fechanac', 'red');
+            }else {
                 alerta2.style.display = 'none';
                 alerta.style.display = 'none';
 
@@ -63,6 +74,66 @@ function renderPage() {
     });
 }
 
+
+
+function changeInputStyle(input, color) {
+    document.querySelector(input).style.border = `1px solid ${ color }`;
+}
+
+function getNameSurname(texto) {
+    // Sugerir nombre de usuario en un futuro
+    /* [nombre, ...apellidos] = texto.split(' ');
+    apellidos = apellidos.join(' '); */
+}
+
+async function checkUsername(usuario) {
+    let exists = false;
+    let respuesta = await fetch(`http://localhost/GreenRoads/api/register-login.php`)
+        .then( respuesta => {return respuesta.json();} )
+        .then( data => {
+            data.forEach(item => {
+                if (item['usuario'] == usuario) {
+                    exists = true;
+                }
+            });
+        } );
+    // let data = await respuesta.json();
+    
+    return exists;
+}
+
+function comprobarCampos(campo, patron) {
+    return patrones[patron].test(campo);
+}
+
+function obtenerActividades() {
+    let actividades = [];
+    if (document.querySelector('#jogging').checked) actividades.push('jogging');
+    if (document.querySelector('#trekking').checked) actividades.push('trekking');
+    if (document.querySelector('#cycling').checked) actividades.push('cycling');
+    if (document.querySelector('#mountaineering').checked) actividades.push('mountaineering');
+    if (document.querySelector('#walk').checked) actividades.push('walk');
+    if (document.querySelector('#kayak').checked) actividades.push('kayak');
+    return (actividades.join(' '));
+}
+
+function generateJSON(nombre, usuario, correo, contrasena, nacimiento, estatura, peso, actividades) {
+    return user = {
+        'nombre': nombre,
+        'usuario': usuario,
+        'correo': correo,
+        'contrasena': contrasena,
+        'nacimiento': nacimiento,
+        'estatura': estatura,
+        'peso': peso,
+        'actividades': actividades,
+    };
+}
+
+function writeAlert(texto) {
+    document.querySelector('#alerta2').textContent = texto;
+    alerta2.style.display = 'block';
+}
 function emptyFields() {
     let inputs = document.querySelectorAll('input');
     Array.from(inputs).forEach(item => {
@@ -98,81 +169,4 @@ function emptyFields() {
         changeInputStyle('#peso', 'red');
     }
     return vacio;
-}
-
-function changeInputStyle(input, color) {
-    document.querySelector(input).style.border = `1px solid ${ color }`;
-}
-
-function getNameSurname(texto) {
-    // Sugerir nombre de usuario en un futuro
-    /* [nombre, ...apellidos] = texto.split(' ');
-    apellidos = apellidos.join(' '); */
-}
-
-async function checkUsername(usuario) {
-    let exists = false;
-    let respuesta = await fetch(`http://localhost/GreenRoads/api/register-login.php`)
-        .then( respuesta => {return respuesta.json();} )
-        .then( data => {
-            data.forEach(item => {
-                if (item['usuario'] == usuario) {
-                    exists = true;
-                }
-            });
-        } );
-    // let data = await respuesta.json();
-    
-    return exists;
-}
-
-function validateEmail(correo) {
-    valido = comprobarCampos(correo, 'email')
-    if (!valido) return false;
-    return true;
-}
-
-function comprobarCampos(campo, patron) {
-    return patrones[patron].test(campo);
-}
-
-function obtenerActividades() {
-    let actividades = [];
-    if (document.querySelector('#jogging').checked) {
-        actividades.push('jogging');
-    }
-    if (document.querySelector('#trekking').checked) {
-        actividades.push('trekking');
-    }
-    if (document.querySelector('#cycling').checked) {
-        actividades.push('cycling');
-    }
-    if (document.querySelector('#mountaineering').checked) {
-        actividades.push('mountaineering');
-    }
-    if (document.querySelector('#walk').checked) {
-        actividades.push('walk');
-    }
-    if (document.querySelector('#kayak').checked) {
-        actividades.push('kayak');
-    }
-    return (actividades.join(' '));
-}
-
-function generateJSON(nombre, usuario, correo, contrasena, nacimiento, estatura, peso, actividades) {
-    return user = {
-        'nombre': nombre,
-        'usuario': usuario,
-        'correo': correo,
-        'contrasena': contrasena,
-        'nacimiento': nacimiento,
-        'estatura': estatura,
-        'peso': peso,
-        'actividades': actividades,
-    };
-}
-
-function writeAlert(texto) {
-    document.querySelector('#alerta2').textContent = texto;
-    alerta2.style.display = 'block';
 }
