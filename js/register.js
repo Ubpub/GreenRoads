@@ -1,6 +1,6 @@
 const hola = '';
 
-renderPage();
+if (localStorage.getItem('webToken') == null) renderPage();
 
 function renderPage() {
     document.querySelector('#btn-registro').addEventListener('click', (e) => {
@@ -28,7 +28,7 @@ function renderPage() {
                 let actividades = obtenerActividades();
                 let user = generateJSON(nombre, usuario, correo, contrasena, nacimiento, estatura, peso, actividades);
 
-                fetch('http://localhost/GreenRoads/api/register.php', {
+                fetch('http://localhost/GreenRoads/api/register-login.php', {
                     method: 'POST',
                     headers: {
                         'Content-type': 'application/json,charset-utf-8'
@@ -95,7 +95,7 @@ function getNameSurname(texto) {
 
 async function checkUsername(usuario) {
     let exists = false;
-    let respuesta = await fetch(`http://localhost/GreenRoads/api/register.php`);
+    let respuesta = await fetch(`http://localhost/GreenRoads/api/register-login.php`);
     let data = await respuesta.json();
     data.forEach(item => {
         if (item['usuario'] == usuario) {

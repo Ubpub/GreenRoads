@@ -10,12 +10,12 @@
     display: inline-block;
     /* display: none; */
 }
-#registrado {
+#registrado, #logueado {
     /* border: 7px solid black; */
     display: none;
     text-align: center;
 }
-#registrado a {
+#registrado a, #logueado a {
     color: #87A330;
     font-weight: bold;
 }

@@ -41,7 +41,7 @@ a {
     color: rgb(68, 68, 68);
 }
 .login {
-    background-color: #B6B6B6;
+    /* background-color: #B6B6B6; */
     font-weight: 600;
     margin: 1.5em 1.5em 1.5em 0.6em;
 }
@@ -59,13 +59,32 @@ a {
 .bi {
     font-size: 1.4em;
 }
-#b-cabecera {
+#b-cabecera, #b-cabecera-usuario {
     display: flex;
     justify-content: end;
+    align-items: center;
     padding-right: 4em;
 }
 #b-cabecera div {
     margin: 1em;
+}
+#b-cabecera-usuario div {
+    margin: 0.5em;
+}
+#cabecera-img {
+    width: 3em;
+    height: 3em;
+    background-image: url('../imgs/icons/user-no-image.png');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#b-cabecera-usuario div {
+    font-weight: 600;
+    cursor: pointer;
+}
+#cabecera-img:hover {
+    opacity: 0.7;
 }
 
 /* ###############################################

@@ -44,15 +44,13 @@
                 $id = $_GET['id'];
                 $sql .= " AND id = '$id'";
             }
-            if (isset($_GET['usuario']) && isset($_GET['contrasena'])) {
-                
-                $contrasena = $_GET['contrasena'];
+            if (isset($_GET['usuario']) && isset($_GET['pass'])) {
+                $usuario = $_GET['usuario'];
+                $contrasena = $_GET['pass'];
                 $hashPass = hash("sha512", $contrasena);
                 $sql .= " AND usuario = '$usuario' AND pass = '$hashPass'";
             }
             $usuario = $_GET['usuario'];
-
-            
 
             $result = $con->query($sql);
             $usuarios = $result->fetch_all(MYSQLI_ASSOC); // Obtiene lo usuarios
@@ -63,7 +61,7 @@
 
             $jwt = JWT::encode($payload, $key, 'HS256');
 
-            $usuario[0]['webToken'] = $jwt;
+            $usuarios[0]['webToken'] = $jwt;
 
             HEADER("HTTP/1.1 200 OK");
             echo json_encode($usuarios);
