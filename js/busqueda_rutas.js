@@ -15,7 +15,6 @@ async function renderPage() {
         .catch(error => console.error(error));
     const data = await response.json();
     data.forEach(item => {
-        console.log(item.usuario);
         crearRutas(item);
     })
 }
@@ -179,20 +178,56 @@ function crearFiltros() {
     // Principal
     let principal = document.createElement('div');
     principal.id = 'filtros';
-    principal.innerHTML = `
-        <div class="filtro-titulo"><h2><i class="bi bi-search"></i>Filtros de búsqueda</h2></div>
-        <div class="filtros-item"><input type="text" name="filtro-nombre" id="filtro-nombre" placeholder="Nombre de la ruta"></div>
-        <div class="filtros-item"><input type="text" name="localidad" id="localidad" placeholder="Localidad"></div>
-        <div class="filtros-item"><input type="text" name="ciudad" id="ciudad" placeholder="Ciudad"></div>
-        <div class="filtros-item"><div id="buscar-filtros">Buscar</div></div>`;
-    
-    formulario.append(principal);
 
+    principal.innerHTML = `
+        <div class="filtro-titulo"><h2><i class="bi bi-search"></i>Filtros de búsqueda</h2></div>`;
+
+    let fNombre = document.createElement('div');
+    fNombre.classList.add('filtros-item');
+    let iNombre = document.createElement('input');
+    iNombre.type = "text";
+    iNombre.name = "filtro-nombre";
+    iNombre.id = "filtro-nombre";
+    iNombre.placeholder = "Nombre de la ruta";
+    fNombre.append(iNombre);
+    principal.append(fNombre);
+
+    let fLocalidad = document.createElement('div');
+    fLocalidad.classList.add('filtros-item');
+    let iLocalidad = document.createElement('input');
+    iLocalidad.type = "text";
+    iLocalidad.name = "localidad";
+    iLocalidad.id = "localidad";
+    iLocalidad.placeholder = "Localidad";
+    fLocalidad.append(iLocalidad);
+    principal.append(fLocalidad);
+
+    let fCiudad = document.createElement('div');
+    fCiudad.classList.add('filtros-item');
+    let iCiudad = document.createElement('input');
+    iCiudad.type = "text";
+    iCiudad.name = "ciudad";
+    iCiudad.id = "ciudad";
+    iCiudad.placeholder = "Ciudad";
+    fCiudad.append(iCiudad);
+    principal.append(fCiudad);
+    
+    let buscar = document.createElement('div');
+    buscar.classList.add('filtros-item');
+
+    let boton = document.createElement('div');
+    boton.id = 'buscar-filtros';
+    boton.textContent = 'Buscar';
+
+    // boton.addEventListener('click', filtrar(iNombre.value, iLocalidad.value, iCiudad.value));
+    buscar.append(boton);
+
+    principal.append(buscar);
+    formulario.append(principal);
     contenido.append(formulario);
 }
 
 function crearRutas(ruta) {
-    console.log(ruta);
     // Pincipal
     let principal = document.createElement('div');
     principal.classList.add('item-ruta');
@@ -266,6 +301,11 @@ function crearRutas(ruta) {
     contenidoImg.append(info);
     principal.append(contenidoImg);
     contenido.append(principal);
+}
+
+function filtrar() {
+    console.log("HOLA");
+    // console.log(ruta, localidad, ciudad)
 }
 
 async function obtenerRutas() {
