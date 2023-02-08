@@ -1,0 +1,74 @@
+#wrapper {
+    padding: 1em;
+    padding-left: 15%;
+    padding-right: 15%;
+    margin-bottom: 6em;
+    border-top: 1px solid #8E8E8E
+}
+#izquierda, #derecha {
+    float: left;
+    margin-bottom: 5em;
+}
+#titulo {
+    display: grid;
+    grid-template-columns: (2, 1fr);
+    /* border: 1px solid red; */
+}
+#editar {
+    grid-column: 2;
+    display: flex;
+    align-items: center;
+}
+#btn-editar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 8em;
+    height: 2em;
+    border-radius: 0.3em;
+    background-color: #B6B6B6;
+    cursor: pointer;
+}
+#btn-editar:hover {
+    background-color: #cfcfcf;
+    color: rgb(68, 68, 68);
+}
+
+/* #################################
+ *             IZQUIERDA
+ * #################################*/
+#izquierda {
+    display: grid;
+    grid-template-rows: (3, 1fr);
+    padding-top: 1.5em;
+    width: 30%;
+    /* border: 1px solid black; */
+}
+.image-user {
+    width: calc(8em + 1vw);
+    height: calc(8em + 1vw);
+    background-image: url('../imgs/icons/user-no-image.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+#izquierda div {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.5em;
+}
+#eliminar {
+    color: #D01010;
+    text-decoration: underline;
+    cursor: pointer;
+    margin-top: 2em;
+}
+/* #################################
+ *             DERECHA
+ * #################################*/
+#derecha {
+    width: 30%;
+    /* border: 1px solid blue; */
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+}

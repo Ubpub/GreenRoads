@@ -51,7 +51,10 @@
                 $id = $_GET['id'];
                 $sql .= " AND id = '$id'";
             }
-            if (isset($_GET['usuario']) && isset($_GET['pass'])) {
+            if (isset($_GET['usuario']) && !isset($_GET['pass'])) {
+                $usuario = $_GET['usuario'];
+                $sql .= " AND usuario = '$usuario'";
+            } else if (isset($_GET['usuario']) && isset($_GET['pass'])) {
                 $usuario = $_GET['usuario'];
                 $contrasena = $_GET['pass'];
                 $hashPass = hash("sha512", $contrasena);

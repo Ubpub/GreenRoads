@@ -15,7 +15,7 @@
     display: flex;
     justify-content: center;
 }
-#image-user {
+.image-user {
     /* border: 2px solid green; */
     background-image: url('../imgs/icons/user-no-image.png');
     background-size: cover;
@@ -25,7 +25,7 @@
     height: calc(12em + 1vw);
     /* cursor: pointer; */
 }
-/* #image-user:hover {
+/* .image-user:hover {
     opacity: 0.7;
 } */
 #change-photo {
@@ -71,7 +71,7 @@
 *                   RESPONSIVE
 * ############################################### */
 @media (max-width: 1260px) {
-    #image-user {
+    .image-user {
         width: 50%;
         height: 8em;
     }
@@ -86,7 +86,7 @@
         border-top: 1px solid #B6B6B6;
         border-left: none;
     }
-    #image-user {
+    .image-user {
         width: calc(10em + 1vw);
         height: calc(10em + 1vw);
     }
