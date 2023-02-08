@@ -62,18 +62,22 @@
             }
 
             $result = $con->query($sql);
-            $usuarios = $result->fetch_all(MYSQLI_ASSOC); // Obtiene lo usuarios
+            if ($result->num_rows > 0) {
+                $usuarios = $result->fetch_all(MYSQLI_ASSOC); // Obtiene lo usuarios
 
-            $payload = [
-                'iss' => $usuarios[0]['usuario'],
-            ];
+                $payload = [
+                    'iss' => $usuarios[0]['usuario'],
+                ];
 
-            $jwt = JWT::encode($payload, $key, 'HS256');
+                $jwt = JWT::encode($payload, $key, 'HS256');
 
-            $usuarios[0]['webToken'] = $jwt;
+                $usuarios[0]['webToken'] = $jwt;
 
-            HEADER("HTTP/1.1 200 OK");
-            echo json_encode($usuarios);
+                HEADER("HTTP/1.1 200 OK");
+                echo json_encode($usuarios);
+            } else {
+                header("HTTP/1.1 409 Conflict");
+            }
         } catch(mysqli_sql_exception $e) {
             header("HTTP/1.1 404 Not Found");
         }

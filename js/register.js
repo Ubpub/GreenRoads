@@ -52,7 +52,8 @@ function renderPage() {
                     
                 })
                 .then(data => {
-                    console.log(data);
+                    document.querySelector('#registro').style.display = 'none';
+                    document.querySelector('#registrado').style.display = 'block';
                 })
             }
         } else {

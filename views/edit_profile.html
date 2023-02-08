@@ -31,6 +31,9 @@
         <div id="izquierda">
             <div><div class="image-user"></div></div>
             <div><div id="change-photo">Cambiar foto</div></div>
+            <!-- <div id="form-foto">
+                <input type="file" name="imagen" />
+            </div> -->
         </div>
         <!-- Fin foto izquierda -->
 
@@ -38,7 +41,7 @@
         <div id="derecha">
             <form action="#">
                 <div><label for="nombreApell">Nombre completo:</label></div>
-                <div><input type="text" name="nombreApell" id="nombreApell" placeholder="Nombre y apellidos" maxlength="70" required></div>
+                <div><input type="text" name="nombreApell" id="nombreApell" placeholder="Nombre completo" maxlength="70" required></div>
                 <div><label for="usuario">Nombre de usuario:</label></div>
                 <div><input type="text" name="usuario" id="usuario" placeholder="Nombre de usuario" maxlength="25" required></div>
                 <div><label for="correo">Correo electrónico:</label></div>
@@ -90,6 +93,10 @@
                 </div>
                 <!-- Fin actividades -->
 
+                <!-- Contraseña -->
+                <div class="password-div"><label for="contrasena">Introduce tu contraseña:</label></div>
+                <div class="password-div2"><input type="password" name="contrasena" id="contrasena" placeholder="Contraseña" required></div>
+
                 <div id="btn-editar">Guardar cambios</div>
                 <div id="alerta">Campo <span id="nombre-campo"></span> vacío</div>
                 <div id="alerta2"></div>
@@ -97,12 +104,19 @@
         </div>
         <!-- Fin foto derecha -->
 
+        <!-- Editado -->
+        <div id="editado">
+            <h2>¡Se han guardado los cambios!</h2>
+            <a href="profile.html">&#171; Volver al perfil &#187;</a>
+        </div>
+
     </div>
     <!-- FIN CONTENIDO -->
 
     <!-- FOOTER -->
     <div id="index-footer"></div>
 
+    <script src="../js/editar_perfil.js"></script>
     <script src="../js/register.js"></script>
     <script src="../js/header_footer.js"></script>
     <script src="../js/image_user.js"></script>

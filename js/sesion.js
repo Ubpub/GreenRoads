@@ -15,7 +15,9 @@ function sesion() {
                 case 200:
                     return response.json();
                 case 404:
-                    document.querySelector('#alerta').display = 'block';
+                    document.querySelector('#alerta').style.display = 'block';
+                case 409:
+                    document.querySelector('#alerta').style.display = 'block';
             }
         })
         .then( data => {
@@ -23,9 +25,10 @@ function sesion() {
             if (data[0]) {
                 localStorage.setItem('webToken', data[0].webToken);
                 localStorage.setItem('usuario', data[0].usuario);
+                document.querySelector('#login').style.display = 'none';
+                document.querySelector('#logueado').style.display = 'block';
             } else {
                 console.log("ERROR");
             }
-            
         })
 }

@@ -1,3 +1,4 @@
+renderPage();
 
 function renderPage() {
     obtenerUsuario(localStorage.getItem('usuario'));

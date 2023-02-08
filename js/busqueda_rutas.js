@@ -254,7 +254,7 @@ function crearRutas(ruta) {
     // Descripción
     let desc = document.createElement('div');
     desc.classList.add('rt-descripcion');
-    desc.textContent = `${ ruta.descripcion }`;
+    desc.textContent = `${ ruta.descripcion.slice(0, 200) }...`;
     info.append(desc);
 
     // Ver ruta
