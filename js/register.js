@@ -1,4 +1,6 @@
-const hola = '';
+const patrones = {
+    'email': /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/,
+};
 
 if (localStorage.getItem('webToken') == null) renderPage();
 
@@ -11,21 +13,24 @@ function renderPage() {
             // getNameSurname(document.querySelector('#nombreApell').value);
 
             // Comprobar si el usuario existe en la base de datos
-            let userNameExists = checkUsername(document.querySelector('#usuario').value);
-            if (userNameExists) {
-                writeAlert('El nombre de usuario ya existe');
-                changeInputStyle('#usuario', 'red');
+            let nombre = document.querySelector('#nombreApell').value;
+            let usuario = document.querySelector('#usuario').value;
+            // console.log(checkUsername(document.querySelector('#usuario').value));
+            // let userNameExists = checkUsername(document.querySelector('#usuario').value);
+            // console.log(userNameExists);
+            let correo = document.querySelector('#correo').value;
+            let contrasena = document.querySelector('#contrasena').value;
+            let nacimiento = document.querySelector('#fechanac').value;
+            let estatura = document.querySelector('#estatura').value;
+            let peso = document.querySelector('#peso').value;
+            let actividades = obtenerActividades();
+            if (!(validateEmail(correo))) {
+                writeAlert('Correo no válido');
+                changeInputStyle('#correo', 'red');
             } else {
                 alerta2.style.display = 'none';
                 alerta.style.display = 'none';
-                let nombre = document.querySelector('#nombreApell').value;
-                let usuario = document.querySelector('#usuario').value;
-                let correo = document.querySelector('#correo').value;
-                let contrasena = document.querySelector('#contrasena').value;
-                let nacimiento = document.querySelector('#fechanac').value;
-                let estatura = document.querySelector('#estatura').value;
-                let peso = document.querySelector('#peso').value;
-                let actividades = obtenerActividades();
+
                 let user = generateJSON(nombre, usuario, correo, contrasena, nacimiento, estatura, peso, actividades);
 
                 fetch('http://localhost/GreenRoads/api/register-login.php', {
@@ -34,7 +39,18 @@ function renderPage() {
                         'Content-type': 'application/json,charset-utf-8'
                     },
                     body: JSON.stringify(user),
-                }).then(response => response.text())
+                }).then(response => {
+                    switch(response.status) {
+                        case 200:
+                            return response.text();
+                        case 404:
+                            writeAlert('Ha ocurrido un error');
+                        case 409:
+                            writeAlert('El nombre de usuario ya está en uso');
+                            changeInputStyle('#usuario', 'red');
+                    }
+                    
+                })
                 .then(data => {
                     console.log(data);
                 })
@@ -95,14 +111,28 @@ function getNameSurname(texto) {
 
 async function checkUsername(usuario) {
     let exists = false;
-    let respuesta = await fetch(`http://localhost/GreenRoads/api/register-login.php`);
-    let data = await respuesta.json();
-    data.forEach(item => {
-        if (item['usuario'] == usuario) {
-            exists = true;
-        }
-    });
+    let respuesta = await fetch(`http://localhost/GreenRoads/api/register-login.php`)
+        .then( respuesta => {return respuesta.json();} )
+        .then( data => {
+            data.forEach(item => {
+                if (item['usuario'] == usuario) {
+                    exists = true;
+                }
+            });
+        } );
+    // let data = await respuesta.json();
+    
     return exists;
+}
+
+function validateEmail(correo) {
+    valido = comprobarCampos(correo, 'email')
+    if (!valido) return false;
+    return true;
+}
+
+function comprobarCampos(campo, patron) {
+    return patrones[patron].test(campo);
 }
 
 function obtenerActividades() {

@@ -1,0 +1,1 @@
+let contenido = document.querySelector('#wrapper');

@@ -45,14 +45,14 @@
     display: flex;
     justify-content: end;
 }
-#barra .barra-item input {
+#barra .barra-item input, #filtros .filtros-item input {
     grid-column: 1;
     border: 1px solid #B9B9B9;
     border-radius: 0.5em;
     width: 15em;
     height: 2em;
 }
-#barra .barra-item input::placeholder {
+#barra .barra-item input::placeholder, #filtros .filtros-item input::placeholder {
     color: #8E8E8E;
     padding-left: 1em;
 }
@@ -145,7 +145,7 @@
     align-items: center;
     padding: 0.5em;
 }
-#mr-btn-ver-mas, #cr-btn-ver-mas {
+#mr-btn-ver-mas, #cr-btn-ver-mas, #buscar-filtros {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -157,8 +157,34 @@
     height: 2em;
     cursor: pointer;
 }
-#mr-btn-ver-mas:hover, #cr-btn-ver-mas:hover {
+#mr-btn-ver-mas:hover, #cr-btn-ver-mas:hover, #buscar-filtros:hover {
     background-color: #a6c93d;
+}
+
+/* ###############################################
+*               FILTROS DE RUTAS
+* ############################################### */
+#filtros {
+    display: grid;
+    grid-template-columns: (4, 1fr);
+    grid-template-rows: (2, 1fr);
+    margin-top: 1em;
+    margin-bottom: 2em;
+}
+#filtros .filtros-item input {
+    width: auto;
+}
+#filtros .filtro-titulo {
+    color: #87A330;
+    grid-column: 1 span 2;
+    grid-row: 1;
+}
+#filtros .filtro-titulo i {
+    font-size: 0.9em;
+    margin-right: 0.7em;
+}
+#filtros .filtros-item {
+    grid-row: 2;
 }
 
 /* ###############################################

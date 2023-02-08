@@ -25,7 +25,9 @@ function obtenerHeaderFooter(view, id) {
         .then( (response) => response.text())
         .then(data => {
             document.querySelector(id).innerHTML = data;
-            document.querySelector('#nom-usu').textContent = `${ localStorage.getItem('usuario')} - Cerrar sesion`;
+            if (header_view == '../views/included-views/headerlog.html') {
+                document.querySelector('#nom-usu').textContent = `${ localStorage.getItem('usuario')} - Cerrar sesion`;
+            }
             cerrarSesion();
         });
 }
