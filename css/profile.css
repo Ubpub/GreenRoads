@@ -155,3 +155,29 @@ input::placeholder {
     font-size: 0.9em;
     display: none;
 }
+@media(max-width: 700px) {
+    #izquierda, #derecha {
+        float: none;
+    }
+    #titulo {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        height: 3em;
+    }
+    #titulo h2 {
+        grid-column: 0;
+    }
+    #editar {
+        grid-column: 0;
+    }
+    #titulo h2, #editar {
+        float: left;
+    }
+    #editar {
+        margin-left: 0.5em;
+    }
+    #izquierda {
+        clear: both;
+    }
+}

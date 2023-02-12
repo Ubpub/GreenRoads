@@ -115,3 +115,8 @@
         width: calc(10em + 1vw);
     }
 }
+@media(max-width: 400px) {
+    #derecha {
+        padding: 0;
+    }
+}
