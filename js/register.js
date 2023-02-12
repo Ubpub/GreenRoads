@@ -34,7 +34,7 @@ function renderPage() {
                 changeInputStyle('#correo', 'red');
             } else if(!(comprobarCampos(contrasena, 'contrasena'))) {
                 writeAlert('La contraseña debe contener al menos 8 caracteres, mayúsculas, minísculas y números');
-                changeInputStyle('#fechanac', 'red');
+                changeInputStyle('#contrasena', 'red');
             }else if(!(comprobarCampos(nacimiento, 'fecha'))) {
                 writeAlert('Fecha no válida');
                 changeInputStyle('#fechanac', 'red');

@@ -1,4 +1,8 @@
+body {
+    position: relative;
+}
 #wrapper {
+    position: relative;
     padding: 1em;
     padding-left: 15%;
     padding-right: 15%;
@@ -12,26 +16,29 @@
 #titulo {
     display: grid;
     grid-template-columns: (2, 1fr);
+    width: 60%;
     /* border: 1px solid red; */
 }
 #editar {
     grid-column: 2;
     display: flex;
     align-items: center;
+    justify-content: end;
 }
 #btn-editar {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 8em;
+    width: 2em;
     height: 2em;
     border-radius: 0.3em;
-    background-color: #B6B6B6;
+    /* background-color: #B6B6B6; */
     cursor: pointer;
 }
 #btn-editar:hover {
-    background-color: #cfcfcf;
-    color: rgb(68, 68, 68);
+    /* background-color: #cfcfcf; */
+    background-color: #eeeeee;
+    color: #587792;
 }
 
 /* #################################
@@ -71,4 +78,80 @@
     /* border: 1px solid blue; */
     padding-left: 1.5em;
     padding-right: 1.5em;
+}
+
+/* #################################
+ *          POP-UP ELIMINAR
+ * #################################*/
+#delete-alert {
+    display: none;
+    grid-template-rows: (4, 1fr);
+    position: absolute;
+    top: 40%;
+    left: 35%;
+    transform: translateY(-50%);
+    width: 25em;
+    height: 10em;
+    padding: 1em;
+    box-shadow: 5px 4px 4px rgba(0, 0, 0, 0.253);
+    background-color: white;
+    border-radius: 0.2em;
+}
+#close {
+    grid-row: 1;
+    font-size: 0.8em;
+    display: flex;
+    justify-content: end;
+}
+#close i:hover {
+    color: rgba(0, 0, 0, 0.342);
+    cursor: pointer;
+}
+.titulo-alert {
+    grid-row: 2;
+}
+.password-div {
+    grid-row: 3;
+    font-size: 0.8em;
+}
+#black-div {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.336);
+}
+input {
+    border: 1px solid #B9B9B9;
+    border-radius: 0.5em;
+    width: 25em;
+    height: 2.5em;
+}
+input::placeholder {
+    color: #8E8E8E;
+    padding-left: 1em;
+}
+.botones {
+    text-align: center;
+}
+#boton-delete {
+    padding: 0.5em;
+    display: inline-block;
+    color: #D01010;
+    text-decoration: underline;
+    cursor: pointer;
+    border-radius: 0.3em;
+}
+#boton-delete:hover {
+    color: white;
+    background-color: #D01010;
+    text-decoration: none;
+}
+.alerta {
+    color: #D01010;
+    font-size: 0.9em;
+    display: none;
 }

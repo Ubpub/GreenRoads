@@ -6,12 +6,9 @@
     border-top: 1px solid #8E8E8E
 }
 #registro {
-    /* border: 1px solid black; */
     width: 40%;
-    /* display: none; */
 }
 #registrado, #logueado {
-    /* border: 7px solid black; */
     display: none;
     text-align: center;
 }
@@ -29,7 +26,6 @@
 * ############################################### */
 #login-form, #register-form {
     margin-top: 1em;
-    /* border: 1px solid #87A330; */
     display: grid;
     grid-template-rows: 1fr;
     width: fit-content;

@@ -1,12 +1,7 @@
-div {
-    /* border: 2px solid red; */
-}
-
 /* ###############################################
 *                   IMAGEN
 * ############################################### */
 #w-container {
-    /* border: 8px solid black; */
     display: grid;
     grid-template-columns: 1fr 2fr;
 }
@@ -14,13 +9,11 @@ div {
     position: relative;
     height: 100vh;
     background-image: url('../imgs/senderismo.jpg');
-    /* background-image: url('../imgs/banner.jpg'); */
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
     background-color: #1E1E1E;
     border-radius: 40% 0 0 40%;
-    /* border: 8px solid pink; */
 }
 #w-texto {
     grid-column: 1;
@@ -31,8 +24,6 @@ div {
     padding: 2.5em;
 }
 #w-imagen-texto {
-    /* border: 2px solid black; */
-    /* display: flex; */
     display: none;
     justify-content: center;
     align-items: center;
@@ -44,10 +35,6 @@ div {
     /* color: #1E1E1E; */
     color: white;
     padding: 7em;
-}
-#w-imagen-texto h2 {
-    /* background-color: rgba(255, 255, 255, 0.699); */
-    /* box-shadow: 2px 5px 10px #1E1E1E; */
 }
 #w-imagen-texto a {
     color: white;
@@ -65,7 +52,6 @@ div {
 #w-imagen-texto h2:hover {
     background-color: rgba(255, 255, 255, 0.849);
     color: #1E1E1E;
-    /* font-size: calc(4.5em + 1vw); */
 }
 #w-texto h2:hover {
     font-size: calc(4.5em + 1vw);
@@ -77,13 +63,11 @@ div {
 * ############################################### */
 #w-contenido {
     padding: 5% 15% 5% 15%;
-    /* border: 4px solid blue; */
 }
 hr {
     border-color: #1E1E1E
 }
 #w-rutas-destacadas {
-    /* border: 2px solid black; */
     display: flex;
     justify-content: center;
     height: 17.5em;
@@ -96,21 +80,17 @@ hr {
     float: left;
     border-radius: 1em;
     cursor: pointer;
-    /* border: 1px solid #1E1E1E; */
-    /* box-shadow: 5px 10px 10px #1e1e1e81; */
     
 }
 #w-rutas-destacadas .w-ruta-img:hover {
     box-shadow: 0 5px 10px #1e1e1e81;
 }
 #w-rutas-destacadas .ruta-texto {
-    /* border: 1px solid black; */
     height: 40%;
     text-align: center;
     padding: 0.3em;
 }
 .ruta-img {
-    /* border: 1px solid black; */
     border-radius: 1em;
     height: 60%;
     background-image: url('../imgs/NoImageFound.png');
@@ -127,17 +107,11 @@ hr {
 *                   SLOGAN
 * ############################################### */
 #l-title {
-    /* border: 8px solid black; */
-    /* color: #87A330; */
     font-size: xx-large;
-    /* text-align: end; */
-    /* -webkit-text-stroke: 1px #667c22; */
 }
 #l-text {
     font-weight: 400;
     font-size: larger;
-    /* text-align: end; */
-    /* border: 8px solid black; */
 }
 
 /* ###############################################
@@ -204,7 +178,6 @@ hr {
     }
     #w-imagen {
         border-radius: 0;
-        /* border: 8px solid pink; */
     }
     #w-texto {
         display: none;

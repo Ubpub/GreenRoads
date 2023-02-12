@@ -28,7 +28,7 @@
 
         <div id="titulo">
             <h2>Perfil</h2>
-            <div id="editar"><a href="edit_profile.html"><div id="btn-editar">Editar perfil</div></a></div>
+            <div id="editar"><a href="edit_profile.html"><div id="btn-editar"><i class="bi bi-pencil-square"></i></div></a></div>
         </div>
 
         <!-- Foto izquierda -->
@@ -52,6 +52,19 @@
 
     <!-- FOOTER -->
     <div id="index-footer"></div>
+
+    <!-- ALERTA ELIMINAR -->
+    <div id="black-div"></div>
+    <div id="delete-alert">
+        <div id="close"><i class="bi bi-x-lg" id="close-icon"></i></div>
+        <div class="titulo-alert">¿Seguro que quieres eliminar la cuenta?</div>
+        <div class="password-div"><input type="password" name="contrasena" id="contrasena" placeholder="Contraseña" required></div>
+        <div class="alerta"></div>
+        <div class="botones">
+            <div id="boton-delete">Eliminar perfil</div>
+        </div>
+    </div>
+    <!-- FIN ALERTA ELIMINAR -->
 
     <script src="../js/header_footer.js"></script>
     <script src="../js/image_user.js"></script>

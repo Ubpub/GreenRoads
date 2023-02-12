@@ -22,7 +22,7 @@ function obtenerUsuario(usuario) {
         })
         .then(data => {
             if (data[0]) {
-                if (data[0]['imagen'] != null) {
+                if (data[0] != null) {
 
                     // Escribir campos
                     document.querySelector('#nombreApell').value = `${ data[0]['nom_ape'] }`;
@@ -127,8 +127,8 @@ function obtenerUsuario(usuario) {
                         }
                     });
                 } else {
-                    document.querySelector('#nom-usuario').textContent = `Usuario`;
-                    document.querySelector('#email').textContent = `No hay correo }`;
+                    /* document.querySelector('#nom-usuario').textContent = `Usuario`;
+                    document.querySelector('#email').textContent = `No hay correo`; */
                 }
             } else {
                 console.log("ERROR");
