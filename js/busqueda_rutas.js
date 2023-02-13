@@ -303,7 +303,7 @@ function crearRutas(ruta) {
         e.preventDefault();
         let id = e.target.dataset.id;
         console.log(id);
-        window.location.href = `../php/detalles.php?id=${ id }`;
+        window.location.href = `detalles.php?id=${ id }`;
     });
     boton.append(verMas);
     info.append(boton);

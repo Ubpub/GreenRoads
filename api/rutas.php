@@ -28,4 +28,16 @@
         }
         exit;
     }
+
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $json = file_get_contents('php://input');
+        if (isset($json)) {
+            try {
+                $ruta = json_decode($json);
+                header("HTTP/1.1 200 OK");
+            } catch(mysqli_sql_exception $e) {
+                header("HTTP/1.1 404 Not Found");
+            }
+        }
+    }
 ?>

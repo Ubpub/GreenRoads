@@ -28,6 +28,10 @@
     <!-- CONTENIDO -->
     <div id="wrapper">
 
+        <div id="volver">
+            <a href="profile.html"><i class="bi bi-caret-left-fill"></i>Volver</a>
+        </div>
+
         <!-- Título -->
         <div id="titulo">
             <h2>Subir ruta</h2>
@@ -37,27 +41,29 @@
         <!-- Formulario -->
         <div id="formulario">
 
-            <div><label for="nombre">Nombre:</label></div>
-            <div><input type="text" name="nombre" id="nombre"></div>
+            <form id="form">
+                <div><label for="nombre">Nombre:</label></div>
+                <div><input type="text" name="nombre" id="nombre"></div>
 
-            <div><label for="descripcion">Descripción:</label></div>
-            <div><textarea name="descripcion" id="descripcion" rows="10"></textarea></div>
+                <div><label for="descripcion">Descripción:</label></div>
+                <div><textarea name="descripcion" id="descripcion" rows="10"></textarea></div>
 
-            <div><label for="dificultad">Dificultad:</label></div>
-            <div id="dificultad">
-                <div class="selected" id="facil">Fácil</div>
-                <div id="normal">Normal</div>
-                <div id="dificil">Dificil</div>
-                <div id="muydificil">Muy dificil</div>
-            </div>
+                <div><label for="dificultad">Dificultad:</label></div>
+                <div id="dificultad">
+                    <div class="selected" id="facil">Fácil</div>
+                    <div id="normal">Normal</div>
+                    <div id="dificil">Dificil</div>
+                    <div id="muydificil">Muy dificil</div>
+                </div>
 
-            <div><label for="media">Fotos y videos:</label></div>
-            <div id="file-input"><input type="file" accept="image/*" name="media" id="media"></div>
+                <div><label for="media">Fotos y videos:</label></div>
+                <div id="file-input"><input type="file" accept="image/*" name="media" id="media"></div>
 
-            <div><label for="gpx">Fichero GPX:</label></div>
-            <div id="file-gpx"><input type="file" name="gpx" id="gpx"></div>
+                <div><label for="gpx">Fichero GPX:</label></div>
+                <div id="file-gpx"><input type="file" name="gpx" id="gpx"></div>
 
-            <div class="boton"><div id="subirRuta">Subir ruta</div></div>
+                <div class="boton"><input type="submit" value="Subir ruta"id="subirRuta"></div>
+            </form>
 
         </div>
         <!-- Fin formulario -->
@@ -69,5 +75,6 @@
     <div id="index-footer"></div>
 
     <script src="../js/header_footer.js"></script>
+    <script src="../js/subir_rutas.js"></script>
 </body>
 </html>

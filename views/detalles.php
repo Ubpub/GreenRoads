@@ -45,6 +45,9 @@
             print_r($ruta);
             echo "</pre>"; */
         ?>
+        <div id="volver">
+            <a href="inicio.html"><i class="bi bi-caret-left-fill"></i>Página de inicio</a>
+        </div>
 
         <!-- Div izquierda -->
         <div id="izquierda">
@@ -57,7 +60,7 @@
             <div id="contenido">
                 <div id="contenido2">
 
-                    <div id="titulo"><?php echo $ruta[0]->nombre_ruta; ?></div>
+                    <div id="titulo"><h3><?php echo $ruta[0]->nombre_ruta; ?></h3></div>
                     <div class="boton">
                         <div id="realizada">He realizado esta ruta</div>
                     </div>
@@ -71,7 +74,7 @@
                         </div>
                         <div id="dificultad">
                             <p>Dificultad</p>
-                            <div><?php echo $ruta[0]->distancia; ?></div>
+                            <div><?php echo $ruta[0]->dificultad; ?></div>
                         </div>
                         <div id="tipo">
                             <p>Tipo de ruta</p>

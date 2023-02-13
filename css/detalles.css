@@ -18,6 +18,14 @@
     width: 56%;
     height: 50em;
 }
+#volver {
+    font-weight: 600;
+    margin-left: 2.5em;
+}
+#volver a:hover {
+    margin-left: -1em;
+    color: #A1C349;
+}
 
 /* #####################################
  *                  MAPA
