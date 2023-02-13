@@ -295,7 +295,17 @@ function crearRutas(ruta) {
     // Ver ruta
     let boton = document.createElement('div');
     boton.classList.add('ver-ruta');
-    boton.innerHTML = `<a href="#" data-id='${ ruta.id }'>Ver ruta</a>`;
+    let verMas = document.createElement('a');
+    verMas.setAttribute('data-id', ruta.id);
+    verMas.textContent = 'Ver más';
+    verMas.href = 'detalles.html';
+    verMas.addEventListener('click', (e) => {
+        e.preventDefault();
+        let id = e.target.dataset.id;
+        console.log(id);
+        window.location.href = `../php/detalles.php?id=${ id }`;
+    });
+    boton.append(verMas);
     info.append(boton);
 
     contenidoImg.append(info);
