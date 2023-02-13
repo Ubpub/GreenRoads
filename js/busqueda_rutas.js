@@ -295,7 +295,7 @@ function crearRutas(ruta) {
     // Ver ruta
     let boton = document.createElement('div');
     boton.classList.add('ver-ruta');
-    boton.innerHTML = `<a href="#">Ver ruta</a>`;
+    boton.innerHTML = `<a href="#" data-id='${ ruta.id }'>Ver ruta</a>`;
     info.append(boton);
 
     contenidoImg.append(info);

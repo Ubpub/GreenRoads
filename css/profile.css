@@ -75,9 +75,25 @@ body {
  * #################################*/
 #derecha {
     width: 30%;
-    /* border: 1px solid blue; */
     padding-left: 1.5em;
     padding-right: 1.5em;
+}
+#rutas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+#rt-user, #subir-ruta {
+    display: inline-block;
+    padding: 0.8em;
+    border-radius: 0.3em;
+    font-weight: 600;
+    font-size: 0.8em;
+    border: 1px solid #8E8E8E;
+    cursor: pointer;
+}
+#rt-user:hover, #subir-ruta:hover {
+    background-color: #cfcfcf;
+    border: 1px solid #cfcfcf;
 }
 
 /* #################################

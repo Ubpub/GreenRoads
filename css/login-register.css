@@ -40,6 +40,10 @@ input::placeholder {
     color: #8E8E8E;
     padding-left: 1em;
 }
+textarea {
+    border: 1px solid #B9B9B9;
+    border-radius: 0.5em;
+}
 #register-form  div:not(#btn-registro), #login-form div:not(#btn-inicio) {
     padding-top: 1em;
 }

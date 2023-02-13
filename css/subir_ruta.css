@@ -1,0 +1,118 @@
+/* #####################################
+ *               FORMULARIO
+ * ##################################### */
+#formulario {
+    /* border: 1px solid black; */
+    width: 57%;
+}
+#formulario div {
+    margin-bottom: 1em;
+}
+input, textarea {
+    border: 1px solid #8E8E8E;
+    width: 40em;
+}
+label {
+    font-weight: 600;
+}
+
+/* #####################################
+ *               DIFICULTAD
+ * ##################################### */
+#dificultad {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+#dificultad div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+    font-weight: 600;
+    font-size: 0.9em;
+    border: 1px solid #8E8E8E;
+    cursor: pointer;
+}
+#dificultad div:hover, .selected {
+    background-color: #D9D9D9;
+    color: #87A330;
+}
+
+/* #####################################
+ *           IMÁGENES Y GPX
+ * ##################################### */
+/* #file-input {
+    position: relative;
+    display: inline-block;
+}
+#file-input::before {
+    background-color: #D9D9D9;
+    color: #8E8E8E;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #8E8E8E;
+    border-radius: 0.3em;
+    font-weight: 600;
+    content: "Subir imagen";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+#file-input input[type="file"] {
+    opacity: 0;
+    width: 40em;
+    height: 10em;
+    display: inline-block;
+    cursor: pointer;
+}
+
+#file-gpx {
+    position: relative;
+    display: inline-block;
+}
+#file-gpx::before {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #8E8E8E;
+    border-radius: 0.3em;
+    content: "Seleccionar fichero";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+#file-gpx:hover {
+    background-color: #f0f0f0;
+}
+
+#file-gpx input[type="file"] {
+    opacity: 0;
+    width: 40em;
+    display: inline-block;
+    cursor: pointer;
+} */
+
+#subirRuta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.3em;
+    padding: 0.8em;
+    width: 15em;
+    cursor: pointer;
+    color: white;
+    background-color: #87A330;
+}
+.boton {
+    display: flex;
+    justify-content: start;
+}
+#subirRuta:hover {
+    background-color: #a6c93d;
+}
