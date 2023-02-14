@@ -122,3 +122,15 @@ label {
 #subirRuta:hover {
     background-color: #a6c93d;
 }
+
+/* #####################################
+ *                EXITO
+ * ##################################### */
+#exito {
+    display: none;
+    text-align: center;
+}
+#exito a {
+    color: #87A330;
+    font-weight: bold;
+}

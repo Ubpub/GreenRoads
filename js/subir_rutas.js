@@ -1,3 +1,5 @@
+document.querySelector('#exito').style.display = 'none';
+document.querySelector('#div-form').style.display = 'block';
 
 let botones = document.querySelectorAll('.btn-dif');
 Array.from(botones).forEach(item => {
@@ -38,8 +40,8 @@ document.getElementById("form").addEventListener("submit", function(event) {
         let ruta = {
             'nombre_ruta': document.querySelector('#nombre').value,
             'distancia': Math.round(json.distance.total),
-            'max-height': Math.round(json.elevation.max),
-            'min-height': Math.round(json.elevation.min),
+            'max_height': Math.round(json.elevation.max),
+            'min_height': Math.round(json.elevation.min),
             'dificultad': document.querySelector('.selected').textContent,
             'pos_slope': Math.round(json.elevation.neg),
             'neg_slope': Math.round(json.elevation.pos),
@@ -56,18 +58,17 @@ document.getElementById("form").addEventListener("submit", function(event) {
             headers: {
                 'Content-type': 'application/json,charset-utf-8'
             },
-            body: JSON.stringify({ruta})
+            body: JSON.stringify(ruta)
         })
         .then((response) => {
             switch (response.status) {
                 case 200:
+                    document.querySelector('#exito').style.display = 'block';
+                    document.querySelector('#div-form').style.display = 'none';
                     return response.json();
                 case 404:
                     console.log(response);
             }
-        })
-        .then(data => {
-            console.log(data);
         });
     };
     reader.readAsText(file);

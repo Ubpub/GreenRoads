@@ -28,45 +28,55 @@
     <!-- CONTENIDO -->
     <div id="wrapper">
 
-        <div id="volver">
-            <a href="profile.html"><i class="bi bi-caret-left-fill"></i>Volver</a>
+        <!-- Div formulario -->
+        <div id="div-form">
+            <div id="volver">
+                <a href="profile.html"><i class="bi bi-caret-left-fill"></i>Volver</a>
+            </div>
+
+            <!-- Título -->
+            <div id="titulo">
+                <h2>Subir ruta</h2>
+            </div>
+            <!-- Fin título -->
+
+            <!-- Formulario -->
+            <div id="formulario">
+
+                <form id="form">
+                    <div><label for="nombre">Nombre:</label></div>
+                    <div><input type="text" name="nombre" id="nombre"></div>
+
+                    <div><label for="descripcion">Descripción:</label></div>
+                    <div><textarea name="descripcion" id="descripcion" rows="10"></textarea></div>
+
+                    <div><label for="dificultad">Dificultad:</label></div>
+                    <div id="dificultad">
+                        <div class="btn-dif selected" id="facil">Fácil</div>
+                        <div class="btn-dif" id="normal">Normal</div>
+                        <div class="btn-dif" id="dificil">Dificil</div>
+                        <div class="btn-dif" id="muydificil">Muy dificil</div>
+                    </div>
+
+                    <div><label for="media">Fotos y videos:</label></div>
+                    <div id="file-input"><input type="file" accept="image/*" name="media" id="media"></div>
+
+                    <div><label for="gpx">Fichero GPX:</label></div>
+                    <div id="file-gpx"><input type="file" name="gpx" id="gpx"></div>
+
+                    <div class="boton"><input type="submit" value="Subir ruta"id="subirRuta"></div>
+                </form>
+
+            </div>
+            <!-- Fin formulario -->
         </div>
+        <!-- Fin div formulario -->
 
-        <!-- Título -->
-        <div id="titulo">
-            <h2>Subir ruta</h2>
+        <!-- Div éxito -->
+        <div id="exito">
+            <h2>Ruta subida con éxito</h2>
+            <a href="profile.html">&#171; Volver &#187;</a>
         </div>
-        <!-- Fin título -->
-
-        <!-- Formulario -->
-        <div id="formulario">
-
-            <form id="form">
-                <div><label for="nombre">Nombre:</label></div>
-                <div><input type="text" name="nombre" id="nombre"></div>
-
-                <div><label for="descripcion">Descripción:</label></div>
-                <div><textarea name="descripcion" id="descripcion" rows="10"></textarea></div>
-
-                <div><label for="dificultad">Dificultad:</label></div>
-                <div id="dificultad">
-                    <div class="btn-dif selected" id="facil">Fácil</div>
-                    <div class="btn-dif" id="normal">Normal</div>
-                    <div class="btn-dif" id="dificil">Dificil</div>
-                    <div class="btn-dif" id="muydificil">Muy dificil</div>
-                </div>
-
-                <div><label for="media">Fotos y videos:</label></div>
-                <div id="file-input"><input type="file" accept="image/*" name="media" id="media"></div>
-
-                <div><label for="gpx">Fichero GPX:</label></div>
-                <div id="file-gpx"><input type="file" name="gpx" id="gpx"></div>
-
-                <div class="boton"><input type="submit" value="Subir ruta"id="subirRuta"></div>
-            </form>
-
-        </div>
-        <!-- Fin formulario -->
 
     </div>
     <!-- FIN CONTENIDO -->

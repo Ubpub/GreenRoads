@@ -35,7 +35,7 @@
             try {
                 $ruta = json_decode($json);
                 $sql = "INSERT INTO rutas (nombre_ruta, distancia, max_height, min_height, dificultad, pos_slope, neg_slope, start_lat, start_lon, usuario, fecha, descripcion, puntos) 
-                        VALUES ('{$ruta->nombre_ruta}', '{$ruta->distancia}', '{$ruta->max_height}', '{$ruta->min_height}','{$ruta->pos_slope}', '{$ruta->neg_slope}', 
+                        VALUES ('{$ruta->nombre_ruta}', '{$ruta->distancia}', '{$ruta->max_height}', '{$ruta->min_height}', '{$ruta->dificultad}', '{$ruta->pos_slope}', '{$ruta->neg_slope}', 
                         '{$ruta->start_lat}', '{$ruta->start_lon}', '{$ruta->usuario}', '{$ruta->fecha}', '{$ruta->descripcion}', '{$ruta->puntos}')";
                 
                 $con->query($sql);
