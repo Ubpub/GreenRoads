@@ -27,6 +27,8 @@ function sesion() {
                 localStorage.setItem('webToken', data[0].webToken);
                 localStorage.setItem('usuario', data[0].usuario);
                 localStorage.setItem('id', data[0].id);
+                if(data[0].imagen != null) localStorage.setItem('img', data[0].imagen);
+                else localStorage.setItem('img', 'userImagen');
                 document.querySelector('#login').style.display = 'none';
                 document.querySelector('#logueado').style.display = 'block';
             } else {

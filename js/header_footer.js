@@ -6,9 +6,9 @@ let nav_bar_id = '#nav-bar';
 const footer_view = "../views/included-views/footer.html";
 let footer_id = '#index-footer';
 
-obtenerHeaderFooter(header_view, header_id);
+obtenerHeaderFooter(header_view, header_id, true);
 // obtenerHeaderFooter(nav_bar, nav_bar_id);
-obtenerHeaderFooter(footer_view, footer_id);
+obtenerHeaderFooter(footer_view, footer_id, false);
 
 function checkLocalStorage() {
     let header = "nulo";
@@ -20,13 +20,18 @@ function checkLocalStorage() {
     return header;
 }
 
-function obtenerHeaderFooter(view, id) {
+function obtenerHeaderFooter(view, id, isHeader) {
     fetch(view)
         .then( (response) => response.text())
         .then(data => {
             document.querySelector(id).innerHTML = data;
-            if (header_view == '../views/included-views/headerlog.html') {
-                document.querySelector('#nom-usu').textContent = `${ localStorage.getItem('usuario')} - Cerrar sesion`;
+            if (isHeader) {
+                if (localStorage.getItem('img') == 'userImagen') document.querySelector('.image-user-hd').style.backgroundImage = `url('../imgs/icons/user-no-image.png')`;
+                else {
+                    document.querySelector('.image-user-hd').style.backgroundImage = `url('${ localStorage.getItem('img') }')`;
+                    document.querySelector('.image-user-hd').style.borderRadius = "50%";
+                }
+                document.querySelector('#nom-usu').textContent = `${ localStorage.getItem('usuario')} - Cerrar sesión`;
             }
             cerrarSesion();
         });
@@ -38,6 +43,7 @@ function cerrarSesion() {
             localStorage.removeItem('usuario');
             localStorage.removeItem('webToken');
             localStorage.removeItem('id');
+            localStorage.removeItem('img');
         });
     }
 }
