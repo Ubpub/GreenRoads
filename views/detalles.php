@@ -41,9 +41,7 @@
             $id = $results['id'];
             $rutaJSON = file_get_contents("http://localhost/GreenRoads/api/rutas.php?id=$id");
             $ruta = json_decode($rutaJSON);
-            /* echo "<pre>";
-            print_r($ruta);
-            echo "</pre>"; */
+            // echo "<h2>{$ruta[0]->puntos}</h2>";
         ?>
         <div id="volver">
             <a href="inicio.html"><i class="bi bi-caret-left-fill"></i>Página de inicio</a>
@@ -115,14 +113,24 @@
     <div id="index-footer"></div>
 
     <script src="../js/header_footer.js"></script>
-    <script>
+    <script type="text/javascript">
+        let start_lat = <?php echo $ruta[0]->start_lat; ?>;
+        let start_lon = <?php echo $ruta[0]->start_lon; ?>;
+        if (start_lat == "" || start_lat == null) start_lat = 42.60003;
+        if (start_lon == "" || start_lon == null) start_lon = -5.57032;
+        
         // L.map es la clase central de la API. Creamos y manipulamos el mapa
-        let map = L.map('map').setView([42.60, -5.57], 15);
+        let map = L.map('map').setView([start_lat, start_lon], 15);
 
         // Mapa base con máximo nivel de zoom
         L.tileLayer('https://tile.thunderforest.com/landscape/{z}/{x}/{y}.png?apikey=b8b39a61c93e4e49ac1dab84527bedff', {
             maxZoom: 18,
             attribution: '&copy; <a href="https://www.thunderforest.com/terms/">Thunderforest</a>'
+        }).addTo(map);
+
+        L.polyline([<?php echo $ruta[0]->puntos ?> ], {
+            color: '#87A330',
+            weight: 5,
         }).addTo(map);
 
         // Control de escala
@@ -136,7 +144,7 @@
             iconColor: 'white',
         });
 
-        L.marker([42.60, -5.57], {icon:marcador}).addTo(map);
+        L.marker([start_lat, start_lon], {icon:marcador}).addTo(map);
     </script>
 </body>
 </html>
