@@ -58,7 +58,7 @@
 }
 #subir-ruta {
     grid-column: 2;
-    background-color: #B6B6B6;
+    /* background-color: #B6B6B6; */
     border-radius: 0.5em;
     display: flex;
     justify-content: center;

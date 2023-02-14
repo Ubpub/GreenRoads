@@ -40,10 +40,13 @@ footer {
     color: #dddddd;
     border-bottom: 2px solid #a6c93d;
 }
+.f-submenu td:hover .enlace {
+    color: #dddddd;
+}
 .f-head {
     font-size: large;
 }
-.f-submenu {
+.f-submenu, .enlace {
     color: #B6B6B6;
 }
 #f-item-3 {

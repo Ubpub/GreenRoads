@@ -23,8 +23,10 @@ function sesion() {
         .then( data => {
             console.log(data);
             if (data[0]) {
+                console.log(data[0]);
                 localStorage.setItem('webToken', data[0].webToken);
                 localStorage.setItem('usuario', data[0].usuario);
+                localStorage.setItem('id', data[0].id);
                 document.querySelector('#login').style.display = 'none';
                 document.querySelector('#logueado').style.display = 'block';
             } else {

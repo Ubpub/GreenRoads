@@ -9,6 +9,7 @@
     margin-bottom: 1em;
 }
 input, textarea {
+    font-family: 'Arimo', sans-serif;
     border: 1px solid #8E8E8E;
     width: 40em;
 }
@@ -26,7 +27,7 @@ label {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
 }
-#dificultad div {
+.btn-dif {
     display: flex;
     justify-content: center;
     align-items: center;

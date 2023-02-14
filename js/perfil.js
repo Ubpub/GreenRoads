@@ -61,6 +61,7 @@ function eliminarUsuario() {
                 case 200:
                     localStorage.removeItem('usuario');
                     localStorage.removeItem('webToken');
+                    localStorage.removeItem('id');
                 case 400:
                     console.log("No se ha podido borrar el usuario");
                 case 404:

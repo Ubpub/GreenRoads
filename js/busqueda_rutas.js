@@ -48,7 +48,17 @@ function crearMenu() {
     barra.append(busqueda);
     let subir = document.createElement('div');
     subir.classList.add('barra-item');
-    subir.innerHTML = `<div id="subir-ruta"><i class="bi bi-cloud-arrow-up"></i>&nbsp;&nbsp;Subir ruta</div>`;
+    let subirDiv = document.createElement('div');
+    subirDiv.id = 'subir-ruta';
+    subirDiv.innerHTML = `<i class="bi bi-cloud-arrow-up"></i>&nbsp;&nbsp;Subir ruta`;
+    subirDiv.addEventListener('click', () => {
+        if (localStorage.getItem('usuario') && localStorage.getItem('webToken')) {
+            window.location.href = 'subir_ruta.html';
+        } else {
+            window.location.href = 'login.html';
+        }
+    })
+    subir.append(subirDiv);
     barra.append(subir);
 
     menu.append(barra);

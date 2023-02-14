@@ -37,6 +37,7 @@ function cerrarSesion() {
         document.querySelector('#nom-usu').addEventListener('click', (e) => {
             localStorage.removeItem('usuario');
             localStorage.removeItem('webToken');
+            localStorage.removeItem('id');
         });
     }
 }
