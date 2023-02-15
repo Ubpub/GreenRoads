@@ -38,7 +38,7 @@
                     header("HTTP/1.1 201 Created");
                     echo json_encode($usuario);
                 } else {
-                    header("HTTP/1.1 409 Conflict");
+                    header("HTTP/1.1 404 Not Found");
                 }
             } catch (mysqli_sql_exception) {
                 // Devuelve un 400 en caso de que haya un problema con la petición
@@ -69,7 +69,7 @@
                 $con->query($sql);
                 header("HTTP/1.1 200 OK");
             } catch(mysqli_sql_exception $e) {
-                header("HTTP/1.1 400 Bad Request");
+                header("HTTP/1.1 404 Not Found");
             }
         } else {
             header("HTTP/1.1 400 Bad Request");

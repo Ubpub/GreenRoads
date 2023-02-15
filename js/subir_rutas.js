@@ -52,7 +52,7 @@ document.getElementById("form").addEventListener("submit", function(event) {
             'descripcion': document.querySelector('#descripcion').value,
             'puntos': JSON.stringify(puntos),
         };
-        console.log(JSON.stringify(ruta));
+        // console.log(JSON.stringify(ruta));
 
         fetch('http://localhost/GreenRoads/api/rutas.php', {
             method: 'POST',
@@ -67,7 +67,7 @@ document.getElementById("form").addEventListener("submit", function(event) {
                     document.querySelector('#exito').style.display = 'block';
                     document.querySelector('#div-form').style.display = 'none';
                     return response.json();
-                case 404:
+                case 400:
                     console.log(response);
             }
         });

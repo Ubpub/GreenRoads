@@ -118,7 +118,7 @@ function obtenerUsuario(usuario) {
                                             case 200:
                                                 return response.json();
                                             case 404:
-                                                return 400;
+                                                return 404;
                                             case 409:
                                                 return 409;
                                         }

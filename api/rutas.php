@@ -56,7 +56,7 @@
                 header("HTTP/1.1 201 OK");
                 echo json_encode($ruta);
             } catch(mysqli_sql_exception $e) {
-                header("HTTP/1.1 404 Not Found");
+                header("HTTP/1.1 400 Bad Request");
             }
         }
         exit;
