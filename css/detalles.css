@@ -149,7 +149,16 @@
 #add-comment {
     display: grid;
     grid-template-columns: 0.4fr 4.6fr;
+    margin-top: 3em;
     /* background-color: white; */
+}
+#iniciar-sesion {
+    margin-top: 3em;
+}
+#iniciar-sesion a {
+    text-decoration: underline;
+    font-weight: 600;
+    color: #87A330;
 }
 #user {
     grid-column: 1;
@@ -171,7 +180,66 @@
 #comment-part textarea {
     font-family: 'Arimo', sans-serif;
     margin-top: 0.5em;
-    width: 90%;
+    width: 95%;
+}
+
+/* #####################################
+ *             COMENTARIOS
+ * ##################################### */
+.com-btn {
+    background-color: #87A330;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15em;
+    border-radius: 0.3em;
+    margin-top: 1em;
+    padding: 0.6em 0 0.6em 0;
+    cursor: pointer;
+}
+.com-btn:hover {
+    background-color: #a6c93d;
+}
+.star {
+    color: #cccccc;
+    cursor: pointer;
+}
+.star:hover {
+    color: orange;
+}
+.comentario {
+    display: grid;
+    grid-template-columns: 0.4fr 4.6fr;
+    background-color: white;
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
+    border-top: 1px solid #8E8E8E;
+}
+.user-imagen {
+    grid-column: 1;
+    display: flex;
+    justify-content: center;
+}
+.cargar-imagen {
+    background-image: url('../imgs/icons/user-no-image.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 3em;
+    height: 3em;
+}
+.comentario-user {
+    grid-column: 2;
+}
+.comentario-user p {
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+}
+.all-text {
+    margin-top: 0.5em;
+    font-size: 0.9em;
 }
 
 /* #####################################

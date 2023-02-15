@@ -51,6 +51,9 @@
 
             // Pasamos el resultado obtenido a JSON
             $ruta = json_decode($rutaJSON);
+
+            $comentariosJSON = file_get_contents("http://localhost/GreenRoads/api/comentario.php?id_ruta=$id");
+            $comentarios = json_decode($comentariosJSON);
         ?>
         <div id="volver">
             <a href="inicio.html"><i class="bi bi-caret-left-fill"></i>Página de inicio</a>
@@ -121,21 +124,53 @@
     <!-- FIN CONTENIDO -->
 
     <!-- COMENTARIOS -->
-    <!-- <div id="comments">
+    <div id="comments">
         <h2>Comentarios</h2>
         <div id="all-comments">
+            <?php
+                if (is_array($comentarios) && count($comentarios) > 0) {
 
+                    foreach($comentarios as $comentario) {
+                        $usuarioJSON = file_get_contents("http://localhost/GreenRoads/api/usuario.php?usuario={$comentario->usuario}");
+                        $usuario = json_decode($usuarioJSON);
+                        echo "<div class='comentario'>";
+                        echo "<div class='user-imagen'>";
+                        if ($usuario[0]->imagen != null) {
+                            echo "<div class='cargar-imagen' style='background-image: url({$usuario[0]->imagen}); border-radius: 50%;'></div>";
+                        } else {
+                            echo "<div class='cargar-imagen'></div>";
+                        }
+                        echo "</div>";
+                        echo "<div class='comentario-user'>";
+                        echo "<p>{$comentario->usuario}</p>";
+                        echo "<div class='all-text'>{$comentario->comentario}</div>";
+                        echo "</div>";
+                        echo "</div>";
+                    }
+                }
+            ?>
         </div>
         <div id="add-comment">
             <div id="user">
                 <div class="image-user"></div>
             </div>
             <div id="comment-part">
-                <p>Añadir comentario como (<span class="username"></span>)</p>
-                <textarea name="comentario" id="" rows="8"></textarea>
+                <p>
+                    Añadir comentario como (<span class="username"></span>)&nbsp;
+                    <!-- <span><i class="bi bi-star-fill star" id="star1"></i></span>
+                    <span><i class="bi bi-star-fill star" id="star2"></i></span>
+                    <span><i class="bi bi-star-fill star" id="star3"></i></span>
+                    <span><i class="bi bi-star-fill star" id="star4"></i></span>
+                    <span><i class="bi bi-star-fill star" id="star5"></i></span> -->
+                </p>
+                <textarea name="comentario" id="comentario-txt" rows="8" maxlength="200"></textarea>
+                <a href="#" class="com-enlace"><div class="com-btn">Enviar comentario</div></a>
             </div>
         </div>
-    </div> -->
+        <div id="iniciar-sesion">
+            <a href="login.html">&#187; Inicia sesión para escribir comentarios &#171;</a>
+        </div>
+    </div>
     <!-- FIN COMENTARIOS -->
 
     <!-- FOOTER -->
@@ -144,7 +179,13 @@
     <script src="../js/header_footer.js"></script>
     <script src="../js/image_user.js"></script>
     <script type="text/javascript">
-        // document.querySelector('.username').textContent = `${ localStorage.getItem('usuario') }`;
+        if (localStorage.getItem('usuario') != null) {
+            document.querySelector('#iniciar-sesion').style.display = 'none';
+            document.querySelector('.username').textContent = `${ localStorage.getItem('usuario') }`;
+        } else {
+            document.querySelector('#add-comment').style.display = 'none';
+            document.querySelector('#iniciar-sesion').style.display = 'block';
+        }
 
         // Con ayuda de PHP obtenemos la latitud y longitud del punto de partida de la ruta
         let start_lat = <?php echo $ruta[0]->start_lat; ?>;
@@ -182,6 +223,37 @@
 
         // Colocar el marcador en las posiciones iniciales de la ruta
         L.marker([start_lat, start_lon], {icon:marcador}).addTo(map);
+
+        if (localStorage.getItem('usuario') != null) {
+            document.querySelector('.com-enlace').addEventListener('click', (e) => {
+                e.preventDefault();
+                let texto = document.querySelector('#comentario-txt').value;
+                if (texto != "") {
+                    let comentario = {
+                        'usuario': localStorage.usuario,
+                        'comentario': texto,
+                        'id_ruta': <?php echo $id; ?>
+                    }
+                    
+                    fetch('http://localhost/GreenRoads/api/comentario.php', {
+                        method: 'POST',
+                        headers: {
+                            'Content-type': 'application/json,charset-utf-8'
+                        },
+                        body: JSON.stringify(comentario)
+                    })
+                    .then((response) => {
+                        switch (response.status) {
+                            case 201:
+                                window.location.href = 'inicio.html';
+                                return response.json();
+                            case 400:
+                                console.log(response);
+                        }
+                    });
+                }
+            });
+        }
     </script>
 </body>
 </html>
