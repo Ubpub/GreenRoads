@@ -12,7 +12,11 @@
     // Creación de una clave que se utilizará para generar un webToken
     $key = 'example_key';
     
-    // Insertar un usuario
+    
+    // ###################
+    //        POST
+    // ###################
+    // Insertar un usuario 
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         // Obtener el fichero enviado en el cuerpo
@@ -56,6 +60,9 @@
     }
     
 
+    // ####################
+    //          GET
+    // ####################
     // Obtener los usuarios
     if ($_SERVER['REQUEST_METHOD'] == 'GET') {
         try {
@@ -80,6 +87,7 @@
             if ($result->num_rows > 0) {
                 $usuarios = $result->fetch_all(MYSQLI_ASSOC); // Obtiene lo usuarios
 
+                // Genera un payload con el nombre de usuario (para el webToken)
                 $payload = [
                     'iss' => $usuarios[0]['usuario'],
                 ];

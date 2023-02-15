@@ -52,7 +52,7 @@ function renderPage() {
                 let user = generateJSON(nombre, usuario, correo, contrasena, nacimiento, estatura, peso, actividades);
 
                 // Petición para registrarse
-                fetch('http://localhost/GreenRoads/api/register-login.php', {
+                fetch('http://localhost/GreenRoads/api/usuario.php', {
                     method: 'POST',
                     headers: {
                         'Content-type': 'application/json,charset-utf-8'
@@ -94,9 +94,9 @@ function getNameSurname(texto) {
 }
 
 // Comprueba si el nombre de usuario ya existe
-async function checkUsername(usuario) {
+/* async function checkUsername(usuario) {
     let exists = false;
-    let respuesta = await fetch(`http://localhost/GreenRoads/api/register-login.php`)
+    let respuesta = await fetch(`http://localhost/GreenRoads/api/usuario.php`)
         .then( respuesta => {return respuesta.json();} )
         .then( data => {
             data.forEach(item => {
@@ -107,7 +107,7 @@ async function checkUsername(usuario) {
         } );
     
     return exists;
-}
+} */
 
 // Comprueba los campos con los patrones
 function comprobarCampos(campo, patron) {

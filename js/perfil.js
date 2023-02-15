@@ -11,7 +11,7 @@ function renderPage() {
 
 function obtenerUsuario(usuario) {
     // Petición para obtener usuario
-    let url = (`http://localhost/GreenRoads/api/register-login.php?usuario=${ usuario }`);
+    let url = (`http://localhost/GreenRoads/api/usuario.php?usuario=${ usuario }`);
     fetch( url )
         .then(response => {
             switch (response.status) {

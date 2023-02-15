@@ -8,7 +8,7 @@ function sesion() {
     let pass = document.querySelector('#contrasena').value;
 
     // Petición pasando el usuario y la contraseña
-    const url = (`http://localhost/GreenRoads/api/register-login.php?usuario=${ usuario }&pass=${ pass }`);
+    const url = (`http://localhost/GreenRoads/api/usuario.php?usuario=${ usuario }&pass=${ pass }`);
     console.log("URL:", url);
     fetch( url )
         .then(response => {

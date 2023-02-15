@@ -7,7 +7,7 @@ if (localStorage.getItem('usuario') != null) {
 
 // Obtiene el usuario con el localStorage y una petición
 function obtenerUsario(usuario) {
-    const url = (`http://localhost/GreenRoads/api/register-login.php?usuario=${ usuario }`);
+    const url = (`http://localhost/GreenRoads/api/usuario.php?usuario=${ usuario }`);
     fetch( url )
         .then(response => {
             switch (response.status) {
