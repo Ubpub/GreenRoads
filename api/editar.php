@@ -29,22 +29,21 @@
 
     // Eliminar el perfil de usuario
     if ($_SERVER['REQUEST_METHOD'] == 'DELETE') {
-            if (isset($_GET['id']) && isset($_GET['pass'])) {
-                $id = $_GET['id'];
-                $pass = $_GET['pass'];
-                $hashPass = hash("sha512", $pass);
-                $sql = "DELETE * FROM usuarios WHERE id = '$id' AND pass = '$hashPass'";
-                echo $sql;
-                try {
-                    $result = $con->query($sql);
-                    header("HTTP/1.1 200 OK");
-                    echo json_encode($id);
-                } catch(mysqli_sql_exception $e) {
-                    header("HTTP/1.1 400 Bad Request");
-                }
-            } else {
+        $json = file_get_contents('php://input');
+        if (isset($json)){
+            $usuario = json_decode($json);
+            $hashPass = hash("sha512", $usuario->pass);
+            $sql = "DELETE FROM usuarios WHERE id = '$usuario->id' AND pass = '$hashPass'";
+            echo $sql;
+            try {
+                $con->query($sql);
+                header("HTTP/1.1 200 OK");
+            } catch(mysqli_sql_exception $e) {
                 header("HTTP/1.1 400 Bad Request");
             }
+        } else {
+            header("HTTP/1.1 400 Bad Request");
+        }
         exit;
     }
 ?>

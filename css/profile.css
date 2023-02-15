@@ -43,6 +43,14 @@ body {
 #volver a:hover {
     color: #A1C349;
 }
+#delete-form {
+    display: none;
+    text-align: center;
+}
+#delete-form a {
+    color: #87A330;
+    font-weight: bold;
+}
 
 /* #################################
  *             IZQUIERDA

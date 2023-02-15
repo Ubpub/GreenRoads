@@ -46,15 +46,27 @@ function clickEliminar() {
     document.querySelector('#boton-delete').addEventListener('click', () => {
         let input_ctr = document.querySelector('#contrasena');
         let contrasena = input_ctr.value;
+        let usuario = {
+            'id': user.id,
+            'pass': contrasena,
+        }
         if (contrasena != "") {
-            fetch(`http://localhost/GreenRoads/api/editar.php?id=${ user.id }&pass=${ contrasena }`)
+            fetch(`http://localhost/GreenRoads/api/editar.php`,{
+                method: 'DELETE',
+                headers: {
+                    'Content-type': 'application/json,charset-utf-8'
+                },
+                body: JSON.stringify(usuario),
+            })
             .then(response => {
                 switch (response.status) {
                     case 200:
-                        /* localStorage.removeItem('usuario');
+                        localStorage.removeItem('usuario');
                         localStorage.removeItem('webToken');
                         localStorage.removeItem('id');
-                        localStorage.removeItem('img'); */
+                        localStorage.removeItem('img');
+                        document.querySelector('#info').style.display = 'none';
+                        document.querySelector('#delete-form').style.display = 'block';
                         return response.text();
                     case 400:
                         console.log("No se ha podido borrar el usuario");
