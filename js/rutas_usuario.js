@@ -57,7 +57,7 @@ function crearRutas(ruta) {
     let verMas = document.createElement('a');
     verMas.setAttribute('data-id', ruta.id);
     verMas.textContent = 'Ver ruta';
-    verMas.href = 'ver_ruta.html';
+    // verMas.href = 'detalles.php';
 
     ver.append(verMas);
     botones.append(ver);

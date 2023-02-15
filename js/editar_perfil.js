@@ -1,15 +1,21 @@
+// Patrones para el correo y la fecha
 let patron = {
     'email': /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/,
     'fecha': /^([1-2][0-9]{3})\-(0[1-9]|1[0-2])\-(0[1-9]|1\d|2\d|3[0-1])$/,
 };
 
+// Carga los componentes de la página
 renderPage();
 
 function renderPage() {
+    // Obtiene el usuario utilizando localStorage
     obtenerUsuario(localStorage.getItem('usuario'));
 };
 
+// Obtiene el usuario pasado por parámetro
 function obtenerUsuario(usuario) {
+    
+    // Petición para obtener el usuario
     const url = (`http://localhost/GreenRoads/api/register-login.php?usuario=${ usuario }`);
     fetch( url )
         .then(response => {
@@ -22,9 +28,10 @@ function obtenerUsuario(usuario) {
         })
         .then(data => {
             if (data[0]) {
+                // Se ejecuta si el primer dato no es nulo
                 if (data[0] != null) {
 
-                    // Escribir campos
+                    // Escribir campos del formulario con los valores obtenidos
                     document.querySelector('#nombreApell').value = `${ data[0]['nom_ape'] }`;
                     document.querySelector('#usuario').value = `${ data[0]['usuario'] }`;
                     document.querySelector('#correo').value = `${ data[0]['correo'] }`;
@@ -43,8 +50,10 @@ function obtenerUsuario(usuario) {
                     // Evento para guardar los cambios
                     document.querySelector("#btn-editar").addEventListener('click', () => {
 
+                        // Comprueba que la contraseña no se haya dejado vacía
                         if (document.querySelector('#contrasena').value != "") {
 
+                            // Recoger valores del formulario
                             let nomApe = document.querySelector('#nombreApell').value;
                             let usuerName = document.querySelector('#usuario').value;
                             let correo = document.querySelector('#correo').value;
@@ -52,6 +61,7 @@ function obtenerUsuario(usuario) {
                             let peso = document.querySelector('#peso').value;
                             let fechanac = document.querySelector('#fechanac').value;
 
+                            // Oculta la alerta en caso de que esté visible
                             document.querySelector('#alerta2').style.display = 'none';
                             document.querySelector('#contrasena').style.border = '1px solid #B9B9B9';
 
@@ -63,6 +73,7 @@ function obtenerUsuario(usuario) {
                                 (peso != null && peso != "") &&
                                 (fechanac != null && fechanac != ""))
                             {
+                                // Comprobación de patrones
                                 if (!patron['email'].test(correo)) {
                                     document.querySelector('#alerta2').textContent = 'Correo no válido';
                                     alerta2.style.display = 'block';
@@ -107,13 +118,20 @@ function obtenerUsuario(usuario) {
                                             case 200:
                                                 return response.json();
                                             case 404:
-                                                console.log("ERROR");
+                                                return 400;
+                                            case 409:
+                                                return 409;
                                         }
                                     })
                                     .then(data => {
-                                        document.querySelector('#izquierda').style.display = 'none';
-                                        document.querySelector('#derecha').style.display = 'none';
-                                        document.querySelector('#editado').style.display = 'block';
+                                        // Comprueba los resultados que ha devuelto
+                                        if (data != 409 && data != 400){
+                                            document.querySelector('#informacion').style.display = 'none';
+                                            document.querySelector('#editado').style.display = 'block';
+                                        } else {
+                                            document.querySelector('#alerta2').textContent = 'Contraseña incorrecta'
+                                            document.querySelector('#alerta2').style.display = 'block';
+                                        }
                                     })
                                 }
                             } else {
@@ -126,9 +144,6 @@ function obtenerUsuario(usuario) {
                             document.querySelector('#contrasena').style.border = '1px solid red';
                         }
                     });
-                } else {
-                    /* document.querySelector('#nom-usuario').textContent = `Usuario`;
-                    document.querySelector('#email').textContent = `No hay correo`; */
                 }
             } else {
                 console.log("ERROR");
@@ -136,6 +151,7 @@ function obtenerUsuario(usuario) {
         })
 }
 
+// Escribe una alerta
 function writeAlert(texto) {
     document.querySelector('#alerta2').textContent = texto;
     alerta2.style.display = 'block';

@@ -6,20 +6,24 @@ const patrones = {
 
 if (localStorage.getItem('webToken') == null) renderPage();
 
+// Carga la página
 function renderPage() {
+
+    // Evento para click
     document.querySelector('#btn-registro').addEventListener('click', (e) => {
+        // Comprueba los campos vacíos
         let vacio = emptyFields();
         let alerta = document.querySelector('#alerta');
         let alerta2 = document.querySelector('#alerta2');
+
+        // Se ejecuta si no hay vacíos
         if (vacio == 0) {
             // getNameSurname(document.querySelector('#nombreApell').value);
 
-            // Comprobar si el usuario existe en la base de datos
+            // Obtener todos los valores del formulario
             let nombre = document.querySelector('#nombreApell').value;
             let usuario = document.querySelector('#usuario').value;
-            // console.log(checkUsername(document.querySelector('#usuario').value));
             // let userNameExists = checkUsername(document.querySelector('#usuario').value);
-            // console.log(userNameExists);
             let correo = document.querySelector('#correo').value;
             let contrasena = document.querySelector('#contrasena').value;
             let nacimiento = document.querySelector('#fechanac').value;
@@ -39,11 +43,15 @@ function renderPage() {
                 writeAlert('Fecha no válida');
                 changeInputStyle('#fechanac', 'red');
             }else {
+
+                // Oculta las alertas en caso de que no lo estuviesen
                 alerta2.style.display = 'none';
                 alerta.style.display = 'none';
 
+                // Genera un JSON con los datos obtenidos
                 let user = generateJSON(nombre, usuario, correo, contrasena, nacimiento, estatura, peso, actividades);
 
+                // Petición para registrarse
                 fetch('http://localhost/GreenRoads/api/register-login.php', {
                     method: 'POST',
                     headers: {
@@ -74,8 +82,7 @@ function renderPage() {
     });
 }
 
-
-
+// Cambia el estilo del input pasado por parámetro
 function changeInputStyle(input, color) {
     document.querySelector(input).style.border = `1px solid ${ color }`;
 }
@@ -86,6 +93,7 @@ function getNameSurname(texto) {
     apellidos = apellidos.join(' '); */
 }
 
+// Comprueba si el nombre de usuario ya existe
 async function checkUsername(usuario) {
     let exists = false;
     let respuesta = await fetch(`http://localhost/GreenRoads/api/register-login.php`)
@@ -97,15 +105,16 @@ async function checkUsername(usuario) {
                 }
             });
         } );
-    // let data = await respuesta.json();
     
     return exists;
 }
 
+// Comprueba los campos con los patrones
 function comprobarCampos(campo, patron) {
     return patrones[patron].test(campo);
 }
 
+// Obtiene las actividades seleccionadas del formulario
 function obtenerActividades() {
     let actividades = [];
     if (document.querySelector('#jogging').checked) actividades.push('jogging');
@@ -114,9 +123,12 @@ function obtenerActividades() {
     if (document.querySelector('#mountaineering').checked) actividades.push('mountaineering');
     if (document.querySelector('#walk').checked) actividades.push('walk');
     if (document.querySelector('#kayak').checked) actividades.push('kayak');
+
+    // Lo devuelve como una cadena separada por espacios
     return (actividades.join(' '));
 }
 
+// Genera un JSON con los datos obtenidos del usuario
 function generateJSON(nombre, usuario, correo, contrasena, nacimiento, estatura, peso, actividades) {
     return user = {
         'nombre': nombre,
@@ -130,10 +142,13 @@ function generateJSON(nombre, usuario, correo, contrasena, nacimiento, estatura,
     };
 }
 
+// Escribe una alerta con el texto pasado por parámetro
 function writeAlert(texto) {
     document.querySelector('#alerta2').textContent = texto;
     alerta2.style.display = 'block';
 }
+
+// Comprueba campos vacíos y les da estilos
 function emptyFields() {
     let inputs = document.querySelectorAll('input');
     Array.from(inputs).forEach(item => {

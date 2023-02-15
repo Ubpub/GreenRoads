@@ -36,12 +36,21 @@
     <!-- CONTENIDO -->
     <div id="wrapper">
         <?php
+
+            // Obtener la URL del servidor
             $componentes = parse_url($_SERVER['REQUEST_URI']);
+
+            // Obtener los parámetros pasados en la URL
             parse_str($componentes['query'], $results);
+
+            // Almacenar en una variable la id obtenida de la URL
             $id = $results['id'];
+
+            // Obtenemos los detalles con una petición a rutas.php pasando el id de ésta
             $rutaJSON = file_get_contents("http://localhost/GreenRoads/api/rutas.php?id=$id");
+
+            // Pasamos el resultado obtenido a JSON
             $ruta = json_decode($rutaJSON);
-            // echo "<h2>{$ruta[0]->puntos}</h2>";
         ?>
         <div id="volver">
             <a href="inicio.html"><i class="bi bi-caret-left-fill"></i>Página de inicio</a>
@@ -111,13 +120,37 @@
     </div>
     <!-- FIN CONTENIDO -->
 
+    <!-- COMENTARIOS -->
+    <!-- <div id="comments">
+        <h2>Comentarios</h2>
+        <div id="all-comments">
+
+        </div>
+        <div id="add-comment">
+            <div id="user">
+                <div class="image-user"></div>
+            </div>
+            <div id="comment-part">
+                <p>Añadir comentario como (<span class="username"></span>)</p>
+                <textarea name="comentario" id="" rows="8"></textarea>
+            </div>
+        </div>
+    </div> -->
+    <!-- FIN COMENTARIOS -->
+
     <!-- FOOTER -->
     <div id="index-footer"></div>
 
     <script src="../js/header_footer.js"></script>
+    <script src="../js/image_user.js"></script>
     <script type="text/javascript">
+        // document.querySelector('.username').textContent = `${ localStorage.getItem('usuario') }`;
+
+        // Con ayuda de PHP obtenemos la latitud y longitud del punto de partida de la ruta
         let start_lat = <?php echo $ruta[0]->start_lat; ?>;
         let start_lon = <?php echo $ruta[0]->start_lon; ?>;
+
+        // Si no tiene punto de partida le ponemos un valor predeterminado
         if (start_lat == "" || start_lat == null) start_lat = 42.60003;
         if (start_lon == "" || start_lon == null) start_lon = -5.57032;
         
@@ -130,6 +163,7 @@
             attribution: '&copy; <a href="https://www.thunderforest.com/terms/">Thunderforest</a>'
         }).addTo(map);
 
+        // Dibujar el trazo de la ruta
         L.polyline([<?php echo $ruta[0]->puntos ?> ], {
             color: '#87A330',
             weight: 5,
@@ -146,6 +180,7 @@
             iconColor: 'white',
         });
 
+        // Colocar el marcador en las posiciones iniciales de la ruta
         L.marker([start_lat, start_lon], {icon:marcador}).addTo(map);
     </script>
 </body>

@@ -6,24 +6,31 @@ window.addEventListener('resize', changeText);
 
 renderPage();
 
+// Carga todos los componentes de la página y sus funciones
 async function renderPage() {
-    crearMenu();
-    crearMejoresRutas();
-    crearCercanas();
-    crearFiltros();
+    crearMenu(); // Crea el menú superior
+    crearMejoresRutas(); // Crea el apartado de mejores rutas
+    crearCercanas(); // Crea el apartado de rutas cercanas al usuario
+    crearFiltros(); // Crea el menú de filtros de búsqueda de rutas
+
+    // Realizo una petición a rutas.php para obtener todas las rutas
     const response = await fetch('http://localhost/GreenRoads/api/rutas.php')
         .catch(error => console.error(error));
     const data = await response.json();
+
+    // Recorro las rutas obtenidas y creo un item con cada una
     data.forEach(item => {
         crearRutas(item);
     })
 }
 
+// Crea el menú superior
 function crearMenu() {
     // Div principal
     let menu = document.createElement('div');
     menu.id = 'busqueda';
 
+    // Elementos del menú
     let seleccion = document.createElement('div');
     seleccion.id = 'menu';
     let rutas = document.createElement('a');
@@ -38,8 +45,9 @@ function crearMenu() {
     mapa.textContent = 'Mapa';
     seleccion.append(mapa);
 
-    menu.append(seleccion);
+    menu.append(seleccion); // Añadir al menú
 
+    // Barra de búsqueda y subida de rutas
     let barra = document.createElement('div');
     barra.id = 'barra';
     let busqueda = document.createElement('div');
@@ -63,9 +71,10 @@ function crearMenu() {
 
     menu.append(barra);
 
-    contenido.append(menu);
+    contenido.append(menu); // Lo añado al contenedor principal
 }
 
+// Creación el apartado de mejores rutas
 function crearMejoresRutas() {
     // Div principal
     let mejoresRutas = document.createElement('div');
@@ -84,6 +93,7 @@ function crearMejoresRutas() {
     let t2 = document.createElement('div');
     t2.id = 'mr-titulo-2';
     
+    // Petición para obtener todas las rutas
     fetch('http://localhost/GreenRoads/api/rutas.php')
     .then(response => {
         switch(response.status) {
@@ -94,6 +104,7 @@ function crearMejoresRutas() {
         }
     })
     .then(data => {
+        // Creación depárrafo con la cantidad de rutas totales
         t2.innerHTML = `<h4><span>${ data.length }</span> ${ data.length == 1 ? "ruta" : "rutas" }</h4>`;
     });
 
@@ -120,9 +131,10 @@ function crearMejoresRutas() {
     btn_ver1 = bItem;
     mejoresRutas.append(boton);
 
-    contenido.append(mejoresRutas);
+    contenido.append(mejoresRutas); // Añadir al contenedor principal
 }
 
+// Creación del apartado de rutas cercanaas al usuario
 function crearCercanas() {
     // Principal
     let principal = document.createElement('div');
@@ -141,6 +153,8 @@ function crearCercanas() {
 
     let t2 = document.createElement('div');
     t2.id = 'cr-titulo-2';
+
+    // Otra petición para obtener las rutas totales
     fetch('http://localhost/GreenRoads/api/rutas.php')
     .then(response => {
         switch(response.status) {
@@ -176,9 +190,10 @@ function crearCercanas() {
     btn_ver2 = bItem;
     principal.append(boton);
 
-    contenido.append(principal);
+    contenido.append(principal); // Añadir al contenedor principal
 }
 
+// Creación del formulario de búsqueda de filtros
 function crearFiltros() {
     // Formulario
     let formulario = document.createElement('form');
@@ -192,6 +207,7 @@ function crearFiltros() {
     principal.innerHTML = `
         <div class="filtro-titulo"><h2><i class="bi bi-search"></i>Filtros de búsqueda</h2></div>`;
 
+    // Nombre de la ruta
     let fNombre = document.createElement('div');
     fNombre.classList.add('filtros-item');
     let iNombre = document.createElement('input');
@@ -202,6 +218,7 @@ function crearFiltros() {
     fNombre.append(iNombre);
     principal.append(fNombre);
 
+    // Localidad de la ruta
     let fLocalidad = document.createElement('div');
     fLocalidad.classList.add('filtros-item');
     let iLocalidad = document.createElement('input');
@@ -212,6 +229,7 @@ function crearFiltros() {
     fLocalidad.append(iLocalidad);
     principal.append(fLocalidad);
 
+    // Ciudad de la ruta
     let fCiudad = document.createElement('div');
     fCiudad.classList.add('filtros-item');
     let iCiudad = document.createElement('input');
@@ -222,6 +240,7 @@ function crearFiltros() {
     fCiudad.append(iCiudad);
     principal.append(fCiudad);
     
+    // Botón de buscar
     let buscar = document.createElement('div');
     buscar.classList.add('filtros-item');
 
@@ -237,6 +256,7 @@ function crearFiltros() {
     contenido.append(formulario);
 }
 
+// Crear item para una ruta
 function crearRutas(ruta) {
     // Pincipal
     let principal = document.createElement('div');
@@ -328,6 +348,7 @@ function filtrar() {
     // console.log(ruta, localidad, ciudad)
 }
 
+// Obtiene todas las rutas con una petición
 async function obtenerRutas() {
     const response = await fetch('http://localhost/GreenRoads/api/rutas.php')
         .catch(error => console.error(error));
@@ -335,6 +356,7 @@ async function obtenerRutas() {
     return data;
 }
 
+// Cambia el texto de unos botones dependiendo del tamaño de la página
 function changeText() {
     if(document.documentElement.clientWidth < 420) {
         btn_ver1.innerHTML = `<i class="bi bi-plus-lg"></i>`;

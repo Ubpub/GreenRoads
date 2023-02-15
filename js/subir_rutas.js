@@ -54,7 +54,7 @@ document.getElementById("form").addEventListener("submit", function(event) {
         };
         console.log(JSON.stringify(ruta));
 
-        /* fetch('http://localhost/GreenRoads/api/rutas.php', {
+        fetch('http://localhost/GreenRoads/api/rutas.php', {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json,charset-utf-8'
@@ -63,14 +63,14 @@ document.getElementById("form").addEventListener("submit", function(event) {
         })
         .then((response) => {
             switch (response.status) {
-                case 200:
+                case 201:
                     document.querySelector('#exito').style.display = 'block';
                     document.querySelector('#div-form').style.display = 'none';
                     return response.json();
                 case 404:
                     console.log(response);
             }
-        }); */
+        });
     };
     reader.readAsText(file);
     let gpx = new gpxParser();

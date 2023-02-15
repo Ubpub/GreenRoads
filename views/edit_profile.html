@@ -26,88 +26,92 @@
     <!-- CONTENIDO -->
     <div id="wrapper">
 
-        <div id="volver">
-            <a href="profile.html"><i class="bi bi-caret-left-fill"></i>Volver</a>
-        </div>
+        <div id="informacion">
 
-        <h2>Información del perfil</h2>
+            <div id="volver">
+                <a href="profile.html"><i class="bi bi-caret-left-fill"></i>Volver</a>
+            </div>
 
-        <!-- Foto izquierda -->
-        <div id="izquierda">
-            <div><div class="image-user"></div></div>
-            <div><div id="change-photo">Cambiar foto</div></div>
-            <!-- <div id="form-foto">
-                <input type="file" name="imagen" />
-            </div> -->
-        </div>
-        <!-- Fin foto izquierda -->
+            <h2>Información del perfil</h2>
 
-        <!-- Foto derecha -->
-        <div id="derecha">
-            <form action="#">
-                <div><label for="nombreApell">Nombre completo:</label></div>
-                <div><input type="text" name="nombreApell" id="nombreApell" placeholder="Nombre completo" maxlength="70" required></div>
-                <div><label for="usuario">Nombre de usuario:</label></div>
-                <div><input type="text" name="usuario" id="usuario" placeholder="Nombre de usuario" maxlength="25" required></div>
-                <div><label for="correo">Correo electrónico:</label></div>
-                <div><input type="text" name="correo" id="correo" placeholder="Correo electrónico" maxlength="60" required></div>
-                <div id="fisico">
-                    <div>
-                        <label for="estatura">Estatura (cm):</label><br/>
-                        <input type="number" name="estatura" id="estatura" placeholder="Estatura (cm)" min="0" max="300">
-                    </div>
-                    <div>
-                        <label for="peso" class="end">Peso (kg):</label><br/>
-                        <input type="number" name="peso" id="peso" placeholder="Peso (kg)" min="0" max="600">
-                    </div>
-                </div>
-                <div class="aux"></div>
-                <div class="top"><label for="fechanac">Fecha de nacimiento:</label></div>
-                <div><input type="text" name="fechanac" id="fechanac" placeholder="(YYYY-mm-dd)"></div>
-                <div class="aux"></div>
+            <!-- Foto izquierda -->
+            <div id="izquierda">
+                <div><div class="image-user"></div></div>
+                <div><div id="change-photo">Cambiar foto</div></div>
+                <!-- <div id="form-foto">
+                    <input type="file" name="imagen" />
+                </div> -->
+            </div>
+            <!-- Fin foto izquierda -->
 
-                <!-- Actividades -->
-                <div id="actividades">
-                    <label for="actividades">Actividades favoritas:</label>
-                    <div id="selector-actividades">
+            <!-- Foto derecha -->
+            <div id="derecha">
+                <form action="#">
+                    <div><label for="nombreApell">Nombre completo:</label></div>
+                    <div><input type="text" name="nombreApell" id="nombreApell" placeholder="Nombre completo" maxlength="70" required></div>
+                    <div><label for="usuario">Nombre de usuario:</label></div>
+                    <div><input type="text" name="usuario" id="usuario" placeholder="Nombre de usuario" maxlength="25" required></div>
+                    <div><label for="correo">Correo electrónico:</label></div>
+                    <div><input type="text" name="correo" id="correo" placeholder="Correo electrónico" maxlength="60" required></div>
+                    <div id="fisico">
                         <div>
-                            <label for="jogging">Correr:</label>
-                            <input type="checkbox" name="jogging" value="jogging" id="jogging">
+                            <label for="estatura">Estatura (cm):</label><br/>
+                            <input type="number" name="estatura" id="estatura" placeholder="Estatura (cm)" min="0" max="300">
                         </div>
                         <div>
-                            <label for="trekking">Senderismo:</label>
-                            <input type="checkbox" name="trekking" value="trekking" id="trekking">
-                        </div>
-                        <div>
-                            <label for="cycling">Ciclismo:</label>
-                            <input type="checkbox" name="cycling" value="cycling" id="cycling">
-                        </div>
-                        <div>
-                            <label for="mountaineering">Alpinismo:</label>
-                            <input type="checkbox" name="mountaineering" value="mountaineering" id="mountaineering">
-                        </div>
-                        <div>
-                            <label for="walk">Paseo:</label>
-                            <input type="checkbox" name="walk" value="walk" id="walk">
-                        </div>
-                        <div>
-                            <label for="kayak">Kayak:</label>
-                            <input type="checkbox" name="kayak" value="kayak" id="kayak">
+                            <label for="peso" class="end">Peso (kg):</label><br/>
+                            <input type="number" name="peso" id="peso" placeholder="Peso (kg)" min="0" max="600">
                         </div>
                     </div>
-                </div>
-                <!-- Fin actividades -->
+                    <div class="aux"></div>
+                    <div class="top"><label for="fechanac">Fecha de nacimiento:</label></div>
+                    <div><input type="text" name="fechanac" id="fechanac" placeholder="(YYYY-mm-dd)"></div>
+                    <div class="aux"></div>
 
-                <!-- Contraseña -->
-                <div class="password-div"><label for="contrasena">Introduce tu contraseña:</label></div>
-                <div class="password-div2"><input type="password" name="contrasena" id="contrasena" placeholder="Contraseña" required></div>
+                    <!-- Actividades -->
+                    <div id="actividades">
+                        <label for="actividades">Actividades favoritas:</label>
+                        <div id="selector-actividades">
+                            <div>
+                                <label for="jogging">Correr:</label>
+                                <input type="checkbox" name="jogging" value="jogging" id="jogging">
+                            </div>
+                            <div>
+                                <label for="trekking">Senderismo:</label>
+                                <input type="checkbox" name="trekking" value="trekking" id="trekking">
+                            </div>
+                            <div>
+                                <label for="cycling">Ciclismo:</label>
+                                <input type="checkbox" name="cycling" value="cycling" id="cycling">
+                            </div>
+                            <div>
+                                <label for="mountaineering">Alpinismo:</label>
+                                <input type="checkbox" name="mountaineering" value="mountaineering" id="mountaineering">
+                            </div>
+                            <div>
+                                <label for="walk">Paseo:</label>
+                                <input type="checkbox" name="walk" value="walk" id="walk">
+                            </div>
+                            <div>
+                                <label for="kayak">Kayak:</label>
+                                <input type="checkbox" name="kayak" value="kayak" id="kayak">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Fin actividades -->
 
-                <div id="btn-editar">Guardar cambios</div>
-                <div id="alerta">Campo <span id="nombre-campo"></span> vacío</div>
-                <div id="alerta2"></div>
-            </form>
+                    <!-- Contraseña -->
+                    <div class="password-div"><label for="contrasena">Introduce tu contraseña:</label></div>
+                    <div class="password-div2"><input type="password" name="contrasena" id="contrasena" placeholder="Contraseña" required></div>
+
+                    <div id="btn-editar">Guardar cambios</div>
+                    <div id="alerta">Campo <span id="nombre-campo"></span> vacío</div>
+                    <div id="alerta2"></div>
+                </form>
+            </div>
+            <!-- Fin foto derecha -->
+
         </div>
-        <!-- Fin foto derecha -->
 
         <!-- Editado -->
         <div id="editado">

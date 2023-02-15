@@ -1,5 +1,7 @@
 <?php
     class Conexion extends mysqli {
+
+        // Parámetros para la BD
         private $host = "localhost";
         private $db = "greenroads";
         private $user = "greenroads";

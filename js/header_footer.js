@@ -10,6 +10,7 @@ obtenerHeaderFooter(header_view, header_id, true);
 // obtenerHeaderFooter(nav_bar, nav_bar_id);
 obtenerHeaderFooter(footer_view, footer_id, false);
 
+// Comprueba con los items de localStorage si hay una sesión activa
 function checkLocalStorage() {
     let header = "nulo";
     if (localStorage.getItem('webToken') != null) {
@@ -21,10 +22,14 @@ function checkLocalStorage() {
 }
 
 function obtenerHeaderFooter(view, id, isHeader) {
+
+    // Obtiene la vista de la cabecera / pie de página
     fetch(view)
         .then( (response) => response.text())
         .then(data => {
             document.querySelector(id).innerHTML = data;
+
+            // Comprueba si es una cabecera o un footer
             if (isHeader) {
                 if (localStorage.getItem('img') == 'userImagen') document.querySelector('.image-user-hd').style.backgroundImage = `url('../imgs/icons/user-no-image.png')`;
                 else {

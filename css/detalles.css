@@ -12,7 +12,7 @@
     /* overflow-y: scroll; */
     padding: 1em;
     width: 40%;
-    height: 50em;
+    height: auto;
 }
 #derecha {
     width: 56%;
@@ -139,6 +139,42 @@
 }
 
 /* #####################################
+ *              INFO FINAL
+ * ##################################### */
+#comments {
+    clear: both;
+    background-color: rgba(224, 224, 224, 0.644);
+    padding: 1em 3em 2em 3em;
+}
+#add-comment {
+    display: grid;
+    grid-template-columns: 0.4fr 4.6fr;
+    /* background-color: white; */
+}
+#user {
+    grid-column: 1;
+}
+.image-user {
+    background-image: url('../imgs/icons/user-no-image.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    width: 4em;
+    height: 4em;
+}
+#comment-part p {
+    color: #8E8E8E;
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+}
+#comment-part textarea {
+    font-family: 'Arimo', sans-serif;
+    margin-top: 0.5em;
+    width: 90%;
+}
+
+/* #####################################
  *              RESPONSIVE
  * ##################################### */
 @media(max-width: 1010px) {
@@ -148,9 +184,6 @@
     #izquierda, #derecha {
         float: none;
         width: 90%;
-    }
-    #izquierda {
-        height: calc(45em + 1vh);
     }
     #derecha {
         padding: 1em;

@@ -1,11 +1,11 @@
 let image = document.querySelector('.image-user');
-let imageHD = document.querySelector('.image-user-hd');
-console.log(imageHD);
 
+// Comprueba si hay una sesión activa en localStorage
 if (localStorage.getItem('usuario') != null) {
     obtenerUsario(localStorage.getItem('usuario'));
 }
 
+// Obtiene el usuario con el localStorage y una petición
 function obtenerUsario(usuario) {
     const url = (`http://localhost/GreenRoads/api/register-login.php?usuario=${ usuario }`);
     fetch( url )
@@ -19,6 +19,7 @@ function obtenerUsario(usuario) {
         })
         .then(data => {
             if (data[0]) {
+                // Si tiene foto de perfil le pone su foto. Si no, le pone la predeterminada
                 if (data[0]['imagen'] != null) {
                     image.style.backgroundImage = `url('${ data[0]['imagen'] }')`;
                     image.style.borderRadius = "50%";
