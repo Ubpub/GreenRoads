@@ -47,7 +47,7 @@ document.getElementById("form").addEventListener("submit", function(event) {
             'neg_slope': Math.round(json.elevation.pos),
             'start_lat': json.points[0].lat,
             'start_lon': json.points[0].lon,
-            'usuario': localStorage.getItem('id'),
+            'usuario': localStorage.getItem('usuario'),
             'fecha': json.points[0].time,
             'descripcion': document.querySelector('#descripcion').value,
             'puntos': JSON.stringify(puntos),

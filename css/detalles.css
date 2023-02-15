@@ -41,7 +41,8 @@
 #imagen {
     position: relative;
     /* border: 1px solid blue; */
-    background: url('../imgs/NoImageFound.png');
+    /* background: url('../imgs/NoImageFound.png'); */
+    background: url('../imgs/paisaje-verde.avif');
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;

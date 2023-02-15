@@ -93,7 +93,8 @@ hr {
 .ruta-img {
     border-radius: 1em;
     height: 60%;
-    background-image: url('../imgs/NoImageFound.png');
+    /* background-image: url('../imgs/NoImageFound.png'); */
+    background: url('../imgs/paisaje-verde.avif');
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;

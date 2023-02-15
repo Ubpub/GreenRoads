@@ -5,14 +5,20 @@
     margin-bottom: 6em;
     border-top: 1px solid #8E8E8E
 }
+#volver {
+    margin-bottom: 1em;
+}
+#volver a:hover {
+    color: #A1C349;
+}
 
 /* ###############################################
 *                  MENU SUPERIOR
 * ############################################### */
 #busqueda {
-    /* border: 2px solid purple; */
     display: grid;
     grid-template-columns: 1fr 1fr;
+    margin-bottom: 1.5em;
 }
 #menu {
     grid-column: 1;
@@ -35,157 +41,19 @@
     color: #8E8E8E;
 }
 
-
-#barra {
-    grid-column: 2;
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-}
 #barra .barra-item {
     display: flex;
     justify-content: end;
 }
 #barra .barra-item input, #filtros .filtros-item input {
-    grid-column: 1;
     border: 1px solid #B9B9B9;
     border-radius: 0.5em;
     width: 15em;
     height: 2em;
 }
-#barra .barra-item input::placeholder, #filtros .filtros-item input::placeholder {
+#barra .barra-item input::placeholder {
     color: #8E8E8E;
     padding-left: 1em;
-}
-#subir-ruta {
-    grid-column: 2;
-    /* background-color: #B6B6B6; */
-    border-radius: 0.5em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-    font-size: small;
-    width: 9em;
-    height: 100%;
-    cursor: pointer;
-}
-#subir-ruta:hover { 
-    background-color: #cfcfcf;
-    color: rgb(68, 68, 68);
-}
-.bi {
-    font-size: 1.4em;
-}
-
-/* ###############################################
-*           MEJORES RUTAS Y CERCA DE TI
-* ############################################### */
-#mejores-rutas, #cerca-de-ti {
-    margin-top: 2em;
-    /* border: 2px solid black; */
-}
-#mr-titulo, #cr-titulo {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
-#mr-titulo img {
-    transform: scaleX(-1);
-    width: 1.5em;
-    height: 2.3em;
-}
-#mr-titulo h2, #cr-titulo h2 {
-    font-size: calc(1em + 1vw);
-    margin-left: 0.5em;
-}
-#mr-titulo-1, #cr-titulo-1 {
-    grid-column: 1;
-    display: flex;
-    justify-content: start;
-    align-items: center;
-}
-#mr-titulo-2, #cr-titulo-2 {
-    display: flex;
-    align-items: center;
-    grid-column: 2;
-    padding-left: 2em;
-}
-#mr-titulo-2 h4, #cr-titulo h4 {
-    color: #8E8E8E;
-}
-
-/* ###############################################
-*                    CERCA DE TI
-* ############################################### */
-#cr-titulo img {
-    width: 2em;
-    height: 2em;
-}
-
-/* ###############################################
-*       MEJORES RUTAS Y CERCA DE TI IMÁGENES
-* ############################################### */
-#mr-img, #cr-img {
-    /* border: 2px solid black; */
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    height: 13em;
-}
-#mr-img div, #cr-img div {
-    /* border: 3px solid purple; */
-    border-radius: 0.5em;
-    /* background-image: url('../imgs/NoImageFound.png'); */
-    background: url('../imgs/paisaje-verde.avif');
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    margin: 0.4em;
-}
-#mr-ver-mas, #cr-ver-mas {
-    display: flex;
-    justify-content: end;
-    align-items: center;
-    padding: 0.5em;
-}
-#mr-btn-ver-mas, #cr-btn-ver-mas, #buscar-filtros {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #87A330;
-    border-radius: 0.3em;
-    font-weight: 500;
-    color: white;
-    width: 8em;
-    height: 2em;
-    cursor: pointer;
-}
-#mr-btn-ver-mas:hover, #cr-btn-ver-mas:hover, #buscar-filtros:hover {
-    background-color: #a6c93d;
-}
-
-/* ###############################################
-*               FILTROS DE RUTAS
-* ############################################### */
-#filtros {
-    display: grid;
-    grid-template-columns: (4, 1fr);
-    grid-template-rows: (2, 1fr);
-    margin-top: 1em;
-    margin-bottom: 2em;
-}
-#filtros .filtros-item input {
-    width: auto;
-}
-#filtros .filtro-titulo {
-    color: #87A330;
-    grid-column: 1 span 2;
-    grid-row: 1;
-}
-#filtros .filtro-titulo i {
-    font-size: 0.9em;
-    margin-right: 0.7em;
-}
-#filtros .filtros-item {
-    grid-row: 2;
 }
 
 /* ###############################################
@@ -194,14 +62,13 @@
 .item-ruta {
     border: 1px solid #B6B6B6;
     border-radius: 0.3em;
-    height: 22em;
+    height: auto;
     padding: 1em;
     margin-bottom: 2em;
 }
 .rt-titulo {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    /* border: 1px solid black; */
 }
 .lugar-ruta {
     display: flex;
@@ -214,66 +81,51 @@
 }
 .rt-contenido {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    /* border: 1px solid black; */
+    grid-template-columns: 1fr 2fr;
     height: 80%;
 }
 .rt-ct-img {
-    /* border: 1px solid green; */
-    display: grid;
-    grid-template-columns: 3fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    /* border: 1px solid black; */
 }
 .rt-info {
     /* border: 1px solid purple; */
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1.3fr 1.7fr 1fr;
+    grid-template-columns: 2fr 1fr;
 }
 .img-principal {
-    grid-column: 1;
-    grid-row: span 3;
+    /* border: 1px solid black; */
+    width: 15em;
+    height: 10em;
     /* background-image: url('../imgs/NoImageFound.png'); */
     background: url('../imgs/paisaje-verde.avif');
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
     margin: 0.4em;
-}
-.img-mini, .more-img {
-    grid-column: span 1;
-    grid-row: span 1;
-    /* background-image: url('../imgs/NoImageFound.png'); */
-    background: url('../imgs/paisaje-verde.avif');
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    margin: 0.4em;
-}
-.more-img {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    filter: blur(2px);
 }
 
 /* ###############################################
 *                TABLA INFORMATIVA
 * ############################################### */
-.rt-table {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-}
 .rt-descripcion {
     padding-top: 3%;
     padding-bottom: 3%;
     padding-left: 8%;
     padding-right: 8%;
+    text-align: justify;
 }
-.ver-ruta {
+.botones {
+    grid-column: 3;
     display: flex;
     justify-content: end;
     align-items: flex-end;
+}
+.editar-ruta a {
+    color: #87A330;
+    text-decoration: underline;
+}
+.editar-ruta a:hover {
+    font-weight: 600;
 }
 .ver-ruta a {
     color: #87A330;
@@ -388,17 +240,7 @@
         font-size: 0.7em;
     }
 }
-@media (max-width: 420px) {
-    #mr-btn-ver-mas, #cr-btn-ver-mas {
-        font-size: 0.5em;
-        width: 4em;
-        height: 2em;
-    }
-}
 @media (min-width: 1260px) {
-    #mr-titulo h2, #cr-titulo h2 {
-        font-size: calc(0.4em + 1vw);
-    }
     #wrapper {
         padding-left: 20%;
         padding-right: 20%;
