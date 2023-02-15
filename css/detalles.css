@@ -136,3 +136,47 @@
     margin-top: 2em;
     margin-bottom: 1em;
 }
+
+/* #####################################
+ *              RESPONSIVE
+ * ##################################### */
+@media(max-width: 1010px) {
+    #wrapper {
+        margin-bottom: 3em;
+    }
+    #izquierda, #derecha {
+        float: none;
+        width: 90%;
+    }
+    #izquierda {
+        height: calc(45em + 1vh);
+    }
+    #derecha {
+        padding: 1em;
+        display: flex;
+        justify-content: center;
+        height: 30em;
+    }
+    #img-hidden {
+        display: flex;
+        justify-content: center;
+    }
+    #imagen {
+        width: 30em;
+    }
+    #anterior, #siguiente {
+        width: 4em;
+    }
+}
+@media(max-width: 480px) {
+    #derecha {
+        height: 20em;
+    }
+    #imagen {
+        width: 15em;
+        height: 10em;
+    }
+    #anterior, #siguiente {
+        width: 2em;
+    }
+}

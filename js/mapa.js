@@ -37,6 +37,14 @@ let marcador = L.AwesomeMarkers.icon({
 
 // L.marker([42.60, -5.57], {icon:marcador}).addTo(map);
 
+document.querySelector('#subir-ruta').addEventListener('click', () => {
+    if (localStorage.getItem('usuario') && localStorage.getItem('webToken')) {
+        window.location.href = 'subir_ruta.html';
+    } else {
+        window.location.href = 'login.html';
+    }
+})
+
 obtenerRutas();
 
 async function obtenerRutas() {

@@ -49,9 +49,11 @@
 
         <!-- Div izquierda -->
         <div id="izquierda">
-            <div id="imagen">
-                <div id="anterior"><i class="bi bi-chevron-compact-left"></i></div>
-                <div id="siguiente"><i class="bi bi-chevron-compact-right"></i></div>
+            <div id="img-hidden">
+                <div id="imagen">
+                    <div id="anterior"><i class="bi bi-chevron-compact-left"></i></div>
+                    <div id="siguiente"><i class="bi bi-chevron-compact-right"></i></div>
+                </div>
             </div>
 
             <!-- Contenido izquierda -->
