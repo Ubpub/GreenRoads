@@ -144,13 +144,12 @@
 #comments {
     clear: both;
     background-color: rgba(224, 224, 224, 0.644);
-    padding: 1em 3em 2em 3em;
+    padding: 1em 5% 2em 5%;
 }
 #add-comment {
     display: grid;
     grid-template-columns: 0.4fr 4.6fr;
     margin-top: 3em;
-    /* background-color: white; */
 }
 #iniciar-sesion {
     margin-top: 3em;
@@ -168,8 +167,8 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    width: 4em;
-    height: 4em;
+    width: calc(4em + 1vw);
+    height: calc(4em + 1vh);
 }
 #comment-part p {
     color: #8E8E8E;
@@ -181,6 +180,9 @@
     font-family: 'Arimo', sans-serif;
     margin-top: 0.5em;
     width: 95%;
+}
+textarea {
+    resize: none;
 }
 
 /* #####################################
@@ -245,6 +247,21 @@
 /* #####################################
  *              RESPONSIVE
  * ##################################### */
+@media(min-width: 1450px) {
+    #img-hidden {
+        display: flex;
+        justify-content: center;
+    }
+    #imagen {
+        width: 30em;
+    }
+}
+@media(max-width: 1200px) {
+    .image-user {
+        width: calc(3em + 1vw);
+        height: calc(3em + 1vh);
+    }
+}
 @media(max-width: 1010px) {
     #wrapper {
         margin-bottom: 3em;
@@ -269,6 +286,20 @@
     #anterior, #siguiente {
         width: 4em;
     }
+    #add-comment {
+        grid-template-columns: 0.5fr 4.5fr;
+    }
+    .comentario {
+        grid-template-columns: 0.5fr 4.5fr;
+    }
+}
+@media(max-width: 800px) {
+    .comentario {
+        grid-template-columns: 0.8fr 4.2fr;
+    }
+    #add-comment {
+        grid-template-columns: 0.8fr 4.2fr;
+    }
 }
 @media(max-width: 480px) {
     #derecha {
@@ -280,5 +311,14 @@
     }
     #anterior, #siguiente {
         width: 2em;
+    }
+    #comments {
+        padding: 1em 0 2em 0;
+    }
+    #comments h2 {
+        padding-left: 1em;
+    }
+    .com-btn {
+        width: 10em;
     }
 }
