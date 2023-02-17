@@ -22,7 +22,15 @@
             // Sirve para obtener las rutas de un determinado usuario
             if (isset($_GET['usuario'])) {
                 $usuario = $_GET['usuario'];
-                $sql .= " AND usuario = '$usuario'";
+                $sql .= " AND usuario LIKE '%$usuario%'";
+            }
+            if (isset($_GET['nombre_ruta'])) {
+                $nombre_ruta = $_GET['nombre_ruta'];
+                $sql .= " AND nombre_ruta LIKE '%$nombre_ruta%'";
+            }
+            if (isset($_GET['dificultad'])) {
+                $dificultad = $_GET['dificultad'];
+                $sql .= " AND dificultad = '$dificultad'";
             }
 
             $result = $con->query($sql);

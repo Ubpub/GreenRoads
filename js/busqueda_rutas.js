@@ -1,4 +1,5 @@
 let contenido = document.querySelector('#wrapper');
+let all_rutas = document.createElement('dvi');
 let btn_ver1 = "";
 let btn_ver2 = "";
 let rutas = [];
@@ -22,6 +23,7 @@ async function renderPage() {
     data.forEach(item => {
         crearRutas(item);
     })
+    contenido.append(all_rutas);
 }
 
 // Crea el menú superior
@@ -218,27 +220,27 @@ function crearFiltros() {
     fNombre.append(iNombre);
     principal.append(fNombre);
 
-    // Localidad de la ruta
-    let fLocalidad = document.createElement('div');
-    fLocalidad.classList.add('filtros-item');
-    let iLocalidad = document.createElement('input');
-    iLocalidad.type = "text";
-    iLocalidad.name = "localidad";
-    iLocalidad.id = "localidad";
-    iLocalidad.placeholder = "Localidad";
-    fLocalidad.append(iLocalidad);
-    principal.append(fLocalidad);
+    // Dificultad de la ruta
+    let fDificultad = document.createElement('div');
+    fDificultad.classList.add('filtros-item');
+    let iDificultad = document.createElement('input');
+    iDificultad.type = "text";
+    iDificultad.name = "dificultad";
+    iDificultad.id = "dificultad";
+    iDificultad.placeholder = "Dificultad";
+    fDificultad.append(iDificultad);
+    principal.append(fDificultad);
 
     // Ciudad de la ruta
-    let fCiudad = document.createElement('div');
-    fCiudad.classList.add('filtros-item');
-    let iCiudad = document.createElement('input');
-    iCiudad.type = "text";
-    iCiudad.name = "ciudad";
-    iCiudad.id = "ciudad";
-    iCiudad.placeholder = "Ciudad";
-    fCiudad.append(iCiudad);
-    principal.append(fCiudad);
+    let fUsuario = document.createElement('div');
+    fUsuario.classList.add('filtros-item');
+    let iUsuario = document.createElement('input');
+    iUsuario.type = "text";
+    iUsuario.name = "usuario";
+    iUsuario.id = "usuario";
+    iUsuario.placeholder = "Usuario";
+    fUsuario.append(iUsuario);
+    principal.append(fUsuario);
     
     // Botón de buscar
     let buscar = document.createElement('div');
@@ -248,7 +250,41 @@ function crearFiltros() {
     boton.id = 'buscar-filtros';
     boton.textContent = 'Buscar';
 
-    // boton.addEventListener('click', filtrar(iNombre.value, iLocalidad.value, iCiudad.value));
+    boton.addEventListener('click', async () => {
+        let url = `http://localhost/GreenRoads/api/rutas.php`;
+        if (!(iNombre.value == "" && iDificultad.value == "" && iUsuario.value == "")) {
+            rutas = [];
+            let aux = '?';
+            if (iNombre.value != "") {
+                let nombre = iNombre.value.replace(/ /g, '+');
+                url = `${ url }${ aux }nombre_ruta=${ nombre }`;
+                if (aux == '?') {
+                    aux = '&';
+                }
+            }
+            if (iDificultad.value != "") {
+                url = `${ url }${ aux }dificultad=${ iDificultad.value }`;
+                if (aux == '?') {
+                    aux = '&';
+                }
+            }
+            if (iUsuario.value != "") {
+                url = `${ url }${ aux }usuario=${ iUsuario.value }`;
+                if (aux == '?') {
+                    aux = '&';
+                }
+            }
+        }
+        all_rutas.innerHTML = ``;
+        const response = await fetch( url )
+            .catch(error => console.error(error));
+            const data = await response.json();
+        
+            // Recorro las rutas obtenidas y creo un item con cada una
+            data.forEach(item => {
+                crearRutas(item);
+            })
+    });
     buscar.append(boton);
 
     principal.append(buscar);
@@ -340,7 +376,8 @@ function crearRutas(ruta) {
 
     contenidoImg.append(info);
     principal.append(contenidoImg);
-    contenido.append(principal);
+    all_rutas.append(principal);
+    
 }
 
 function filtrar() {

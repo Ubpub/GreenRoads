@@ -54,7 +54,7 @@
                         VALUES ('{$comentario->usuario}', '{$comentario->comentario}', '{$comentario->id_ruta}')";
                 
                 $con->query($sql);
-                header("HTTP/1.1 201 OK");
+                header("HTTP/1.1 200 OK");
                 echo json_encode($comentario);
             } catch(mysqli_sql_exception $e) {
                 header("HTTP/1.1 400 Bad Request");
