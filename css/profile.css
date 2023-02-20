@@ -182,6 +182,15 @@ input::placeholder {
     font-size: 0.9em;
     display: none;
 }
+
+/* ###############################
+ *           RESPONSIVE
+ * ############################### */
+@media(max-width: 900px) {
+    #delete-alert {
+        left: 20%;
+    }
+}
 @media(max-width: 700px) {
     #izquierda, #derecha {
         float: none;
@@ -206,5 +215,13 @@ input::placeholder {
     }
     #izquierda {
         clear: both;
+    }
+}
+@media(max-width: 500px) {
+    #delete-alert {
+        top: 40%;
+        left: 5%;
+        right: 5%;
+        width: 85%;
     }
 }
