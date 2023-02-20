@@ -55,6 +55,47 @@
     color: #8E8E8E;
     padding-left: 1em;
 }
+#buscar-filtros {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #87A330;
+    border-radius: 0.3em;
+    font-weight: 500;
+    color: white;
+    width: 8em;
+    height: 2em;
+    cursor: pointer;
+}
+#buscar-filtros:hover {
+    background-color: #a6c93d;
+}
+
+/* ###############################################
+*               FILTROS DE RUTAS
+* ############################################### */
+#filtros {
+    display: grid;
+    grid-template-columns: (4, 1fr);
+    grid-template-rows: (2, 1fr);
+    margin-top: 1em;
+    margin-bottom: 2em;
+}
+#filtros .filtros-item input {
+    width: auto;
+}
+#filtros .filtro-titulo {
+    color: #87A330;
+    grid-column: 1 span 2;
+    grid-row: 1;
+}
+#filtros .filtro-titulo i {
+    font-size: 0.9em;
+    margin-right: 0.7em;
+}
+#filtros .filtros-item {
+    grid-row: 2;
+}
 
 /* ###############################################
 *                LISTA DE RUTAS

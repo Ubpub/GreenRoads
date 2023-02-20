@@ -1,4 +1,5 @@
 let contenido = document.querySelector('#wrapper');
+let all_rutas = document.querySelector('#all_rutas');
 let rutas = [];
 
 renderPage();
@@ -10,6 +11,46 @@ async function renderPage() {
     data.forEach(item => {
         crearRutas(item);
     })
+    contenido.append(all_rutas);
+
+    document.querySelector('#buscar-filtros').addEventListener('click', async () => {
+        let nombre = document.querySelector('#filtro-nombre').value;
+        let dificultad = document.querySelector('#dificultad').value;
+        let usuario = document.querySelector('#usuario').value;
+        let url = `http://localhost/GreenRoads/api/rutas.php`;
+        if (!(nombre == "" && dificultad == "" && usuario == "")) {
+            rutas = [];
+            let aux = '?';
+            if (nombre != "") {
+                let nom = nombre.replace(/ /g, '+');
+                url = `${ url }${ aux }nombre_ruta=${ nom }`;
+                if (aux == '?') {
+                    aux = '&';
+                }
+            }
+            if (dificultad != "") {
+                url = `${ url }${ aux }dificultad=${ dificultad }`;
+                if (aux == '?') {
+                    aux = '&';
+                }
+            }
+            if (usuario != "") {
+                url = `${ url }${ aux }usuario=${ usuario }`;
+                if (aux == '?') {
+                    aux = '&';
+                }
+            }
+        }
+        all_rutas.innerHTML = ``;
+        const response = await fetch( url )
+            .catch(error => console.error(error));
+            const data = await response.json();
+        
+            // Recorro las rutas obtenidas y creo un item con cada una
+            data.forEach(item => {
+                crearRutas(item);
+            })
+    });
 }
 
 function crearRutas(ruta) {
@@ -81,5 +122,5 @@ function crearRutas(ruta) {
 
     contenidoImg.append(info);
     principal.append(contenidoImg);
-    contenido.append(principal);
+    all_rutas.append(principal);
 }
