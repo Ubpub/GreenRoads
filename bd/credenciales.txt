@@ -1,0 +1,8 @@
+Las credenciales de algunos usuarios de la base de datios:
+
+Usuario     Contraseña
+
+Admin       admin123
+lima        lima
+pedrin00    pedrin00
+

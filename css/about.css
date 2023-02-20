@@ -1,0 +1,42 @@
+#wrapper {
+    margin: 0;
+    padding: 0;
+    padding-bottom: 3em;
+}
+#contenido {
+    padding: 1em;
+    padding-left: 15%;
+    padding-right: 15%;
+    margin-bottom: 6em;
+    border-top: 1px solid #8E8E8E
+}
+#imagen {
+    position: relative;
+    height: 20em;
+    background-image: url('https://images.wallpaperscraft.com/image/single/mountain_peak_tourists_148482_1920x1080.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+#texto-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+    color: white;
+}
+#texto-img h1 {
+    font-size: 3em;
+}
+#slogan {
+    font-size: 1.5em;
+}
+#slogan, .flex {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
