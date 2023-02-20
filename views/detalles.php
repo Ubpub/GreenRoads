@@ -163,7 +163,7 @@
                     <span><i class="bi bi-star-fill star" id="star4"></i></span>
                     <span><i class="bi bi-star-fill star" id="star5"></i></span> -->
                 </p>
-                <textarea name="comentario" id="comentario-txt" rows="8" maxlength="200"></textarea>
+                <textarea name="comentario" id="comentario-txt" rows="8" maxlength="700"></textarea>
                 <a href="#" class="com-enlace"><div class="com-btn">Enviar comentario</div></a>
             </div>
         </div>
@@ -196,7 +196,7 @@
         if (start_lon == "" || start_lon == null) start_lon = -5.57032;
         
         // L.map es la clase central de la API. Creamos y manipulamos el mapa
-        let map = L.map('map').setView([start_lat, start_lon], 15);
+        let map = L.map('map', {scrollWheelZoom: false}).setView([start_lat, start_lon], 15);
 
         // Mapa base con máximo nivel de zoom
         L.tileLayer('https://tile.thunderforest.com/landscape/{z}/{x}/{y}.png?apikey=b8b39a61c93e4e49ac1dab84527bedff', {

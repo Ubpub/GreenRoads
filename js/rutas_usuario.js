@@ -4,7 +4,6 @@ let rutas = [];
 renderPage();
 
 async function renderPage() {
-    console.log(`http://localhost/GreenRoads/api/rutas.php?usuario=${ localStorage.getItem('id') }`);
     const response = await fetch(`http://localhost/GreenRoads/api/rutas.php?usuario=${ localStorage.getItem('usuario') }`)
         .catch(error => console.error(error));
     const data = await response.json();

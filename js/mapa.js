@@ -1,5 +1,5 @@
 // L.map es la clase central de la API. Creamos y manipulamos el mapa
-let map = L.map('map').setView([42.60, -5.57], 15);
+let map = L.map('map', {scrollWheelZoom: false}).setView([42.60, -5.57], 15);
 
 // Mapa base con máximo nivel de zoom
 L.tileLayer('https://tile.thunderforest.com/landscape/{z}/{x}/{y}.png?apikey=b8b39a61c93e4e49ac1dab84527bedff', {

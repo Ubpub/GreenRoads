@@ -25,15 +25,10 @@ document.getElementById("form").addEventListener("submit", function(event) {
         let parser = new gpxParser();
         parser.parse(gpx);
         let json = parser.tracks[0];
-        console.log(json);
 
         // Array para los puntos de la ruta
         let puntos = [];
         json.points.forEach(item => {
-            /* puntos.push({
-                'lat': item.lat,
-                'lon': item.lon,
-            }) */
             puntos.push([item.lat, item.lon]);
         })
 

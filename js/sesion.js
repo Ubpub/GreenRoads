@@ -9,7 +9,6 @@ function sesion() {
 
     // Petición pasando el usuario y la contraseña
     const url = (`http://localhost/GreenRoads/api/usuario.php?usuario=${ usuario }&pass=${ pass }`);
-    console.log("URL:", url);
     fetch( url )
         .then(response => {
             switch (response.status) {

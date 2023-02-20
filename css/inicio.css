@@ -82,7 +82,6 @@
 * ############################################### */
 #mejores-rutas, #cerca-de-ti {
     margin-top: 2em;
-    /* border: 2px solid black; */
 }
 #mr-titulo, #cr-titulo {
     display: grid;
@@ -125,7 +124,6 @@
 *       MEJORES RUTAS Y CERCA DE TI IMÁGENES
 * ############################################### */
 #mr-img, #cr-img {
-    /* border: 2px solid black; */
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     height: 13em;
@@ -201,7 +199,6 @@
 .rt-titulo {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    /* border: 1px solid black; */
 }
 .lugar-ruta {
     display: flex;
@@ -215,7 +212,6 @@
 .rt-contenido {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    /* border: 1px solid black; */
     height: 80%;
 }
 .rt-ct-img {
@@ -325,7 +321,6 @@
         height: 30em;
     }
     .rt-contenido {
-        /* border: 1px solid black; */
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 2fr;
         height: 88%;

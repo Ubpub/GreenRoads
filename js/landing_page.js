@@ -12,7 +12,7 @@ async function renderPage() {
     // Recorro las rutas obtenidas y creo un item con cada una
     data.forEach(item => {
         numRutas++;
-        if (numRutas <= 4) {
+        if (numRutas <= maxRutas) {
             let ruta = document.createElement('div');
             ruta.classList.add('w-ruta-img');
             ruta.innerHTML = `

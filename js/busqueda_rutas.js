@@ -1,5 +1,5 @@
 let contenido = document.querySelector('#wrapper');
-let all_rutas = document.createElement('dvi');
+let all_rutas = document.createElement('div');
 let btn_ver1 = "";
 let btn_ver2 = "";
 let rutas = [];
@@ -365,7 +365,7 @@ function crearRutas(ruta) {
     let verMas = document.createElement('a');
     verMas.setAttribute('data-id', ruta.id);
     verMas.textContent = 'Ver más';
-    verMas.href = 'detalles.html';
+    verMas.href = 'detalles.php';
     verMas.addEventListener('click', (e) => {
         e.preventDefault();
         let id = e.target.dataset.id;
