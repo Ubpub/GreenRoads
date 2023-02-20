@@ -8,10 +8,14 @@
 #formulario div {
     margin-bottom: 1em;
 }
-input, textarea {
+input, textarea, select {
     font-family: 'Arimo', sans-serif;
     border: 1px solid #8E8E8E;
     width: 40em;
+}
+select {
+    height: 3em;
+    border-radius: 0.5em;
 }
 label {
     font-weight: 600;

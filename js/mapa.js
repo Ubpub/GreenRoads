@@ -54,7 +54,14 @@ async function obtenerRutas() {
     const data = await response.json();
     data.forEach(item => {
         let marker = L.marker([item.start_lat, item.start_lon], {icon:marcador}).addTo(map);
-        marker.bindPopup(item.nombre_ruta).openPopup();
+        marker.bindPopup(item.nombre_ruta);
+        marker.on('mouseover', (e) => {
+            marker.openPopup();
+        });
+        marker.on('click', () => {
+            window.location.href = `detalles.php?id=${ item.id }`;
+        });
+        
     });
     map.setView([data[0].start_lat, data[0].start_lon], 7);
 }

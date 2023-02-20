@@ -303,7 +303,8 @@ function crearRutas(ruta) {
     titulo.classList.add('rt-titulo');
     titulo.innerHTML = `
         <div class="nombre-ruta"><h2>${ ruta.nombre_ruta }</h2></div>
-        <div class="lugar-ruta"><h4>País - Comunidad - Ciudad</h4></div>`;
+        <div class="lugar-ruta"><h4>${ ruta.usuario }</h4></div>`;
+    // <div class="lugar-ruta"><h4>País - Comunidad - Ciudad</h4></div>
     principal.append(titulo);
 
     // Contenido
@@ -341,7 +342,7 @@ function crearRutas(ruta) {
     dificultad.innerHTML = `
         <table>
             <tr><th>Dificultad</th></tr>
-            <tr><td class="dificultad">--</td></tr>
+            <tr><td class="dificultad">${ ruta.dificultad }</td></tr>
         </table>`;
     tabla.append(dificultad);
 
@@ -378,11 +379,6 @@ function crearRutas(ruta) {
     principal.append(contenidoImg);
     all_rutas.append(principal);
     
-}
-
-function filtrar() {
-    console.log("HOLA");
-    // console.log(ruta, localidad, ciudad)
 }
 
 // Obtiene todas las rutas con una petición

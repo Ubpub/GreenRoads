@@ -39,7 +39,7 @@ document.getElementById("form").addEventListener("submit", function(event) {
 
         let ruta = {
             'nombre_ruta': document.querySelector('#nombre').value,
-            'distancia': Math.round(json.distance.total),
+            'distancia': ((json.distance.total)/1000).toFixed(2),
             'max_height': Math.round(json.elevation.max),
             'min_height': Math.round(json.elevation.min),
             'dificultad': document.querySelector('.selected').textContent,
